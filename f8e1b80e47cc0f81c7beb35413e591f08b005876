@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da7095c5_aca04ef5",
+        "filename": "config/application.properties",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-24T18:20:44Z",
+      "side": 1,
+      "message": "Not sure if we need these 3 lines for ONAP.  These were needed in the AT\u0026T environment.",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_2cac3eed",
+        "filename": "config/application.properties",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-24T18:20:44Z",
+      "side": 1,
+      "message": "These next 2 lines are probably not needed.",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_ccb8222d",
+        "filename": "config/application.properties",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-24T18:20:44Z",
+      "side": 1,
+      "message": "These next 2 lines are probably not needed.",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
