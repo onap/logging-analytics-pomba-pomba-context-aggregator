@@ -263,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_bb4f2192",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/datatypes/POAEvent.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T21:07:16Z",
+      "side": 1,
+      "message": "I agree using StringBuffer makes things less readable in this case.",
+      "parentUuid": "da7095c5_8d49c38d",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_6c5c7626",
         "filename": "src/main/java/org/onap/pomba/contextaggregator/exception/ContextAggregatorError.java",
         "patchSetId": 4
