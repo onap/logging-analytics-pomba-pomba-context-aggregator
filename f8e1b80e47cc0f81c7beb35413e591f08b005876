@@ -70,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_276a191b",
+        "filename": "config/logback.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1077
+      },
+      "writtenOn": "2018-07-25T00:35:23Z",
+      "side": 1,
+      "message": "don\u0027t we support all 4 log files audit, debug, metrics, error",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_ac2b6e81",
         "filename": "pom.xml",
         "patchSetId": 4
