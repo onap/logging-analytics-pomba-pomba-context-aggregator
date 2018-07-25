@@ -245,6 +245,24 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_8d49c38d",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/datatypes/POAEvent.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2018-07-25T14:02:26Z",
+      "side": 1,
+      "message": "I disagree - StringBuilder gains you nothing here - this is a single statement.  Use StringBuilder when you\u0027re in a loop, have multiple statements, etc.\n\nOtherwise, StringBuilder just makes things less readable.",
+      "parentUuid": "da7095c5_0702753e",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_6c5c7626",
         "filename": "src/main/java/org/onap/pomba/contextaggregator/exception/ContextAggregatorError.java",
         "patchSetId": 4
