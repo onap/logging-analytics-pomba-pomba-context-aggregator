@@ -138,6 +138,23 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_0702753e",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/datatypes/POAEvent.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1077
+      },
+      "writtenOn": "2018-07-25T00:56:37Z",
+      "side": 1,
+      "message": "minor but use StringBuilder or StringBuffer here",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_6c5c7626",
         "filename": "src/main/java/org/onap/pomba/contextaggregator/exception/ContextAggregatorError.java",
         "patchSetId": 4
@@ -285,6 +302,23 @@
       "writtenOn": "2018-07-24T18:42:29Z",
       "side": 1,
       "message": "Suspicious use of `Log` instead of `log`\n\nRemove jline.internal.Log import?",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_27ff7936",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1077
+      },
+      "writtenOn": "2018-07-25T00:56:37Z",
+      "side": 1,
+      "message": "set your eclipse to use 4 spaces not tabs",
       "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
