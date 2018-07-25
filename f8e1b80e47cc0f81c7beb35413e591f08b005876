@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_ad2b67ea",
+        "filename": "config/logback.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "More investigation is needed on this.  \n\nI would suggest that we create a JIRA task to track this.  Would you be OK with this?",
+      "parentUuid": "da7095c5_276a191b",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_ac2b6e81",
         "filename": "pom.xml",
         "patchSetId": 4
@@ -98,6 +116,24 @@
       "writtenOn": "2018-07-24T18:42:29Z",
       "side": 1,
       "message": "This can be updated to 1.1.1, or the unstable 1.2.0-SNAPSHOT if you\u0027re brave.",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_ec73a613",
+        "filename": "pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Will update to 1.1.1 in the next patch",
+      "parentUuid": "da7095c5_ac2b6e81",
       "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -121,6 +157,24 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_2cff5e36",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/builder/ContextBuilder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7095c5_4c20929b",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_8c4d4a75",
         "filename": "src/main/java/org/onap/pomba/contextaggregator/config/EventConfig.java",
         "patchSetId": 4
@@ -132,6 +186,24 @@
       "writtenOn": "2018-07-24T18:42:29Z",
       "side": 1,
       "message": "top-entity-type \u003d\u003e topic-entity-type ?",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_e773c113",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/config/EventConfig.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7095c5_8c4d4a75",
       "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -155,6 +227,24 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_4da08b90",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/datatypes/POAEvent.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "changed to use StringBuffer",
+      "parentUuid": "da7095c5_0702753e",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_6c5c7626",
         "filename": "src/main/java/org/onap/pomba/contextaggregator/exception/ContextAggregatorError.java",
         "patchSetId": 4
@@ -166,6 +256,24 @@
       "writtenOn": "2018-07-24T18:42:29Z",
       "side": 1,
       "message": "Pass pattern to constructor\n\n MessageFormat formatter \u003d new MessageFormat(this.message)",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_e74ae1ab",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/exception/ContextAggregatorError.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7095c5_6c5c7626",
       "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -189,6 +297,24 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_87c76512",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/exception/ContextAggregatorException.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Removed TODOs",
+      "parentUuid": "da7095c5_8c746a9d",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_6c7316b2",
         "filename": "src/main/java/org/onap/pomba/contextaggregator/rest/RestRequest.java",
         "patchSetId": 4
@@ -200,6 +326,24 @@
       "writtenOn": "2018-07-24T18:42:29Z",
       "side": 1,
       "message": "More whitespace issues",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_67d6d1c7",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/rest/RestRequest.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7095c5_6c7316b2",
       "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -223,6 +367,24 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_87ee858a",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "da7095c5_0c961a95",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_2c93dea4",
         "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
         "patchSetId": 4
@@ -234,6 +396,24 @@
       "writtenOn": "2018-07-24T18:42:29Z",
       "side": 1,
       "message": "More whitespace issues",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_a7f38972",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7095c5_2c93dea4",
       "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -257,6 +437,24 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_e7f8a14b",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7095c5_acee0e21",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_6c81d649",
         "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
         "patchSetId": 4
@@ -268,6 +466,24 @@
       "writtenOn": "2018-07-24T18:42:29Z",
       "side": 1,
       "message": "Exceptions should be logged correctly",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_879525e6",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Changed to log.error(e.getMessage());",
+      "parentUuid": "da7095c5_6c81d649",
       "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -291,6 +507,24 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_a79aa912",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7095c5_ac87ee60",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_ecb5e631",
         "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
         "patchSetId": 4
@@ -302,6 +536,24 @@
       "writtenOn": "2018-07-24T18:42:29Z",
       "side": 1,
       "message": "Suspicious use of `Log` instead of `log`\n\nRemove jline.internal.Log import?",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_278699ba",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7095c5_ecb5e631",
       "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
@@ -325,6 +577,24 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_c7a9dd25",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7095c5_27ff7936",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_0cc4da90",
         "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorService.java",
         "patchSetId": 4
@@ -336,6 +606,24 @@
       "writtenOn": "2018-07-24T18:42:29Z",
       "side": 1,
       "message": "ExecutorService is overkill to run a single task once; a simple Thread would do if ContextAggregatorProcessor is Runnable",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_4d92cb58",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-25T13:29:41Z",
+      "side": 1,
+      "message": "We are using a thread pool with 10 threads (see ContextAggregatorProcesser line 56).\n\nWe can create a technical debt item to track this if you think that we should revisit the design.  Agree?",
+      "parentUuid": "da7095c5_0cc4da90",
       "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
