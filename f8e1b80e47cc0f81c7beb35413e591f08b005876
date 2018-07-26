@@ -105,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "da7095c5_7c72dfe6",
+        "filename": "config/logback.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-07-26T12:53:42Z",
+      "side": 1,
+      "message": "It was agreed that we will address this later, added https://jira.onap.org/browse/LOG-578 to track this.",
+      "parentUuid": "da7095c5_ad2b67ea",
+      "revId": "f8e1b80e47cc0f81c7beb35413e591f08b005876",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7095c5_ac2b6e81",
         "filename": "pom.xml",
         "patchSetId": 4
