@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da7095c5_c9dd6616",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/exception/ContextAggregatorError.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2018-07-27T14:07:03Z",
+      "side": 1,
+      "message": "Formatter gone wild here - each enum should be starting a new line.",
+      "revId": "45555503bd5a340274aeb690ec888a7672417ff9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_e9e2aad4",
+        "filename": "src/test/java/org/onap/pomba/contextaggregator/ApplicationTest.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2018-07-27T14:07:03Z",
+      "side": 1,
+      "message": "Does this test actually do anything?",
+      "revId": "45555503bd5a340274aeb690ec888a7672417ff9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_49d156fa",
+        "filename": "src/test/java/org/onap/pomba/contextaggregator/builder/ContextBuilderTest.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2018-07-27T14:07:03Z",
+      "side": 1,
+      "message": "Correct parameter order is assertEquals(expected, actual).  If there is a mismatch, the exception will be misleading;  \"Expected \u003cbadValue\u003e but got \u003csdnchost\u003e\" when you really want \"Expected \u003csdnchost\u003e but got \u003cbadValue\u003e\"",
+      "revId": "45555503bd5a340274aeb690ec888a7672417ff9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_29d8a21c",
+        "filename": "src/test/java/org/onap/pomba/contextaggregator/config/EventConfigTest.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2018-07-27T14:07:03Z",
+      "side": 1,
+      "message": "More backwards checks",
+      "revId": "45555503bd5a340274aeb690ec888a7672417ff9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_e9094a96",
+        "filename": "src/test/java/org/onap/pomba/contextaggregator/config/EventHeaderConfigTest.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2018-07-27T14:07:03Z",
+      "side": 1,
+      "message": "Copy and paste error?  Why is domain used to validate eventType, entityType, topEntityType and topicName?",
+      "revId": "45555503bd5a340274aeb690ec888a7672417ff9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
