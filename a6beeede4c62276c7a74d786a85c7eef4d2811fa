@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a76adc5_c7732e14",
+        "filename": "config/logback.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-08-01T19:23:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a76adc5_87d53645",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 16
+      },
+      "revId": "a6beeede4c62276c7a74d786a85c7eef4d2811fa",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a76adc5_76a68ec3",
         "filename": "pom.xml",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2018-08-01T05:12:34Z",
       "side": 1,
       "message": "1.1.1",
+      "range": {
+        "startLine": 14,
+        "startChar": 11,
+        "endLine": 14,
+        "endChar": 17
+      },
+      "revId": "a6beeede4c62276c7a74d786a85c7eef4d2811fa",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_fc911d53",
+        "filename": "pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-08-01T19:23:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a76adc5_76a68ec3",
       "range": {
         "startLine": 14,
         "startChar": 11,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "1a76adc5_e7c98a5b",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-08-01T19:23:06Z",
+      "side": 1,
+      "message": "I suggest that we don\u0027t do this now as it doesn\u0027t like up with the comment.  Based on the comment on line 97, this is a design intent.",
+      "parentUuid": "1a76adc5_47cf1eb1",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 23
+      },
+      "revId": "a6beeede4c62276c7a74d786a85c7eef4d2811fa",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a76adc5_e7c3ca88",
         "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
         "patchSetId": 8
@@ -111,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "1a76adc5_47b5decb",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-08-01T19:23:06Z",
+      "side": 1,
+      "message": "See comment on line 99.",
+      "parentUuid": "1a76adc5_e7c3ca88",
+      "revId": "a6beeede4c62276c7a74d786a85c7eef4d2811fa",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a76adc5_b6ed06f2",
         "filename": "src/test/java/org/onap/pomba/contextaggregator/config/EventHeaderConfigTest.java",
         "patchSetId": 8
@@ -122,6 +212,30 @@
       "writtenOn": "2018-08-01T05:12:34Z",
       "side": 1,
       "message": "getEntityType",
+      "range": {
+        "startLine": 57,
+        "startChar": 46,
+        "endLine": 57,
+        "endChar": 55
+      },
+      "revId": "a6beeede4c62276c7a74d786a85c7eef4d2811fa",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_47b07ef4",
+        "filename": "src/test/java/org/onap/pomba/contextaggregator/config/EventHeaderConfigTest.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-08-01T19:23:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a76adc5_b6ed06f2",
       "range": {
         "startLine": 57,
         "startChar": 46,
@@ -157,6 +271,30 @@
     },
     {
       "key": {
+        "uuid": "1a76adc5_07928657",
+        "filename": "src/test/java/org/onap/pomba/contextaggregator/config/EventHeaderConfigTest.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-08-01T19:23:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a76adc5_56ba72e2",
+      "range": {
+        "startLine": 62,
+        "startChar": 46,
+        "endLine": 62,
+        "endChar": 55
+      },
+      "revId": "a6beeede4c62276c7a74d786a85c7eef4d2811fa",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a76adc5_16b4faf0",
         "filename": "src/test/java/org/onap/pomba/contextaggregator/config/EventHeaderConfigTest.java",
         "patchSetId": 8
@@ -168,6 +306,30 @@
       "writtenOn": "2018-08-01T05:12:34Z",
       "side": 1,
       "message": "getTopicName",
+      "range": {
+        "startLine": 67,
+        "startChar": 46,
+        "endLine": 67,
+        "endChar": 55
+      },
+      "revId": "a6beeede4c62276c7a74d786a85c7eef4d2811fa",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_a79e3262",
+        "filename": "src/test/java/org/onap/pomba/contextaggregator/config/EventHeaderConfigTest.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-08-01T19:23:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a76adc5_16b4faf0",
       "range": {
         "startLine": 67,
         "startChar": 46,
