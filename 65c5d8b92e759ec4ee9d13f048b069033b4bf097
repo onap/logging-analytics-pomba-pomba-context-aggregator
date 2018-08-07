@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_646fa193",
+        "filename": "pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1077
+      },
+      "writtenOn": "2018-08-07T16:02:52Z",
+      "side": 1,
+      "message": "looks good",
+      "revId": "65c5d8b92e759ec4ee9d13f048b069033b4bf097",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_4472a57d",
+        "filename": "pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1077
+      },
+      "writtenOn": "2018-08-07T16:02:52Z",
+      "side": 1,
+      "message": "looks good",
+      "revId": "65c5d8b92e759ec4ee9d13f048b069033b4bf097",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
