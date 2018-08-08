@@ -33,7 +33,7 @@ public class ContextBuilder {
     private static final String READ_TIMEOUT = "read.timeout.ms";
     private static final String BASE_URI = "base.uri";
     private static final String USERNAME = "basicauth.username";
-    private static final String PASSWORD = "basicauth.password";
+    private static final String CREDENTIAL = "basicauth.password";
 
     private Properties properties;
     private String contextName;
@@ -98,6 +98,6 @@ public class ContextBuilder {
     }
 
     public String getPassword() {
-        return properties.getProperty(PASSWORD);
+        return properties.getProperty(CREDENTIAL);
     }
 }
