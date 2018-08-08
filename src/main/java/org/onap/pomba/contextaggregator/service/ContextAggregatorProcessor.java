@@ -74,9 +74,8 @@ public class ContextAggregatorProcessor implements Callable<Void> {
      * aggregated models to DMaaP.
      *
      * @param payload
-     * @throws Exception
      */
-    public void process(String payload) throws Exception {
+    public void process(String payload) {
 
         log.debug("Consumed event: " + payload);
         POAEvent event;
