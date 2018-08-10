@@ -149,7 +149,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+			<!--<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.11</version>
@@ -170,7 +170,63 @@
 					</imageTags>
 					<forceTags>true</forceTags>
 				</configuration>
-			</plugin>
+			</plugin>-->
+			<plugin>
+            <groupId>io.fabric8</groupId>
+            <artifactId>docker-maven-plugin</artifactId>
+            <version>0.19.1</version>
+            <configuration>
+                <verbose>true</verbose>
+                <apiVersion>1.23</apiVersion>
+                <pullRegistry>${docker.pull.registry}</pullRegistry>
+                <pushRegistry>${docker.push.registry}</pushRegistry>
+                <images>
+                    <image>
+                        <name>onap/${project.artifactId}</name>
+                        <alias>${project.artifactId}</alias>
+                        <build>
+                            <cleanup>true</cleanup>
+                            <tags>
+                                <tag>${docker.snapshot.tag}</tag>
+                                <tag>${docker.latest.tag}</tag>
+                            </tags>
+                            <dockerFileDir>${project.basedir}/src/main/docker</dockerFileDir>
+                        </build>
+                    </image>
+                </images>
+            </configuration>
+            <executions>
+                <!--<execution>
+                    <id>clean-images</id>
+                    <phase>pre-clean</phase>
+                    <goals>
+                        <goal>remove</goal>
+                    </goals>
+                    <configuration>
+                        <removeAll>true</removeAll>
+                    </configuration>
+                </execution>  -->
+
+                <execution>
+                    <id>generate-images</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>build</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>push-images</id>
+                    <phase>deploy</phase>
+                    <goals>
+                        <goal>build</goal>
+                        <goal>push</goal>
+                    </goals>
+                    <configuration>
+                        <image>onap/vvp/cms</image>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
