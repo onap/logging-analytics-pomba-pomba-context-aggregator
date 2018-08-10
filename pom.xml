@@ -257,7 +257,7 @@
 							<outputDirectory>${project.basedir}/target/docker-stage/opt/app/config</outputDirectory>
 							<resources>
 								<resource>
-									<directory>../config</directory>
+									<directory>config</directory>
 									<includes>
 										<include>*.properties</include>
 										<include>builders/*.properties</include>
@@ -297,7 +297,7 @@
 							<outputDirectory>${project.basedir}/target/docker-stage/opt/app/lib</outputDirectory>
 							<resources>
 								<resource>
-									<directory>../target/</directory>
+									<directory>target/</directory>
 									<includes>
 										<include>*.jar</include>
 									</includes>
