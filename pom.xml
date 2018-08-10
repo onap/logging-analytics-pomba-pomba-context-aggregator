@@ -154,28 +154,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!--<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.4.11</version>
-				<dependencies>
-					<dependency>
-						<groupId>com.github.jnr</groupId>
-						<artifactId>jnr-unixsocket</artifactId>
-						<version>0.13</version>
-					</dependency>
-				</dependencies>
-				<configuration>
-					<verbose>true</verbose>
-					<serverId>docker-hub</serverId>
-					<imageName>${docker.push.registry}/onap/${project.artifactId}</imageName>
-					<dockerDirectory>${docker.location}</dockerDirectory>
-					<imageTags>
-						<imageTag>latest</imageTag>
-					</imageTags>
-					<forceTags>true</forceTags>
-				</configuration>
-			</plugin>-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -213,9 +191,6 @@
             <configuration>
                 <verbose>true</verbose>
                 <apiVersion>1.23</apiVersion>
-                <!-- <pullRegistry>${docker.pull.registry}</pullRegistry>
-                <pushRegistry>${docker.push.registry}</pushRegistry>
-                <dockerHost>${docker.pull.registry}</dockerHost> -->
                 <images>
                     <image>
                         <name>onap/${project.artifactId}</name>
@@ -223,61 +198,44 @@
                         <build>
                             <cleanup>try</cleanup>
                             <dockerFileDir>${project.basedir}/target/docker-stage</dockerFileDir>
-							<!-- <dockerFile>${project.basedir}/target/docker-stage/Dockerfile</dockerFile> -->
                             <tags>
                                 <tag>${docker.snapshot.tag}</tag>
                                 <tag>${docker.latest.tag}</tag>
                             </tags>
-                            <!-- <dockerFileDir>${project.basedir}/src/main/docker</dockerFileDir> -->
                         </build>
                     </image>
                 </images>
             </configuration>
             <executions>
-                <!-- <execution>
-                   <id>clean-images</id>
-                    <phase>pre-clean</phase>
-                    <goals>
-                        <goal>remove</goal>
-                    </goals>
-                    <configuration>
-                        <removeAll>true</removeAll>
-                    </configuration>
-                </execution> -->
-
-                <execution>
-                    <id>generate-images</id>
-                    <!-- <phase>package</phase> -->
-                    <phase>generate-sources</phase>
-                    <goals>
-                        <goal>build</goal>
-                    </goals>
-                </execution>
-                <execution>
-                    <id>push-images</id>
-                    <phase>deploy</phase>
-                    <goals>
-                        <goal>build</goal>
-                        <goal>push</goal>
-                    </goals>
-                    <!--<configuration>
-                        <image>onap/vvp/cms</image>
-                    </configuration>  -->
-                </execution>
-            </executions>
-        </plugin>
-        <plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
-				<executions>
-					<execution>
-						<id>copy-dockerfile</id>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals><!-- here the phase you need -->
-						<phase>validate</phase>
+			<execution>
+				<id>generate-images</id>
+                <phase>generate-sources</phase>
+                <goals>
+              		<goal>build</goal>
+                </goals>
+            </execution>
+            <execution>
+				<id>push-images</id>
+              	<phase>deploy</phase>
+              	<goals>
+               		<goal>build</goal>
+                    <goal>push</goal>
+ 				</goals>
+			</execution>
+		</executions>
+	</plugin>
+  	<plugin>
+		<artifactId>maven-resources-plugin</artifactId>
+		<version>2.6</version>
+		<executions>
+			<execution>
+				<id>copy-dockerfile</id>
+					<goals>
+						<goal>copy-resources</goal>
+					</goals><!-- here the phase you need -->
+					<phase>validate</phase>
 						<configuration>
-							<outputDirectory>${basedir}/target/docker-stage</outputDirectory>
+							<outputDirectory>${project.basedir}/target/docker-stage</outputDirectory>
 							<resources>
 								<resource>
 									<directory>src/main/docker</directory>
@@ -289,26 +247,65 @@
 							</resources>
 						</configuration>
 					</execution>
-					<!-- <execution>
+					<execution>
 						<id>copy-properties</id>
 						<goals>
 							<goal>copy-resources</goal>
 						</goals>
 						<phase>validate</phase>
 						<configuration>
-							<outputDirectory>${basedir}/target/docker-stage/opt/onap/sdnc/data/properties</outputDirectory>
+							<outputDirectory>${project.basedir}/target/docker-stage/opt/app/config</outputDirectory>
 							<resources>
 								<resource>
-									<directory>../src/main/properties</directory>
+									<directory>../config</directory>
 									<includes>
 										<include>*.properties</include>
-										<include>*.properties.sdnctldb01</include>
+										<include>builders/*.properties</include>
+										<include>*.xml</include>
 									</includes>
 									<filtering>false</filtering>
 								</resource>
 							</resources>
 						</configuration>
-					</execution>-->
+					</execution>
+					<execution>
+						<id>copy-script</id>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<phase>validate</phase>
+						<configuration>
+							<outputDirectory>${project.basedir}/target/docker-stage/opt/app/bin</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/docker</directory>
+									<includes>
+										<include>*.sh</include>
+									</includes>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-jar</id>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<phase>validate</phase>
+						<configuration>
+							<outputDirectory>${project.basedir}/target/docker-stage/opt/app/lib</outputDirectory>
+							<resources>
+								<resource>
+									<directory>../target/</directory>
+									<includes>
+										<include>*.jar</include>
+									</includes>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
         </plugins>
