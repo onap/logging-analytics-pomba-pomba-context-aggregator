@@ -213,27 +213,29 @@
             <configuration>
                 <verbose>true</verbose>
                 <apiVersion>1.23</apiVersion>
-                <pullRegistry>${docker.pull.registry}</pullRegistry>
+                <!-- <pullRegistry>${docker.pull.registry}</pullRegistry>
                 <pushRegistry>${docker.push.registry}</pushRegistry>
-                <dockerHost>${docker.pull.registry}</dockerHost>
+                <dockerHost>${docker.pull.registry}</dockerHost> -->
                 <images>
                     <image>
                         <name>onap/${project.artifactId}</name>
                         <alias>${project.artifactId}</alias>
                         <build>
-                            <cleanup>true</cleanup>
+                            <cleanup>try</cleanup>
+                            <dockerFileDir>${project.basedir}/target/docker-stage</dockerFileDir>
+							<dockerFile>${project.basedir}/target/docker-stage/Dockerfile</dockerFile>
                             <tags>
                                 <tag>${docker.snapshot.tag}</tag>
                                 <tag>${docker.latest.tag}</tag>
                             </tags>
-                            <dockerFileDir>${project.basedir}/src/main/docker</dockerFileDir>
+                            <!-- <dockerFileDir>${project.basedir}/src/main/docker</dockerFileDir> -->
                         </build>
                     </image>
                 </images>
             </configuration>
             <executions>
-                <execution>
-                    <id>clean-images</id>
+                <!-- <execution>
+                   <id>clean-images</id>
                     <phase>pre-clean</phase>
                     <goals>
                         <goal>remove</goal>
@@ -241,11 +243,12 @@
                     <configuration>
                         <removeAll>true</removeAll>
                     </configuration>
-                </execution>
+                </execution> -->
 
                 <execution>
                     <id>generate-images</id>
-                    <phase>package</phase>
+                    <!-- <phase>package</phase> -->
+                    <phase>generate-sources</phase>
                     <goals>
                         <goal>build</goal>
                     </goals>
@@ -257,12 +260,57 @@
                         <goal>build</goal>
                         <goal>push</goal>
                     </goals>
-                    <configuration>
+                    <!--<configuration>
                         <image>onap/vvp/cms</image>
-                    </configuration>
+                    </configuration>  -->
                 </execution>
             </executions>
         </plugin>
+        <plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>copy-dockerfile</id>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals><!-- here the phase you need -->
+						<phase>validate</phase>
+						<configuration>
+							<outputDirectory>${basedir}/target/docker-stage</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/docker</directory>
+									<includes>
+										<include>Dockerfile</include>
+									</includes>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<!-- <execution>
+						<id>copy-properties</id>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<phase>validate</phase>
+						<configuration>
+							<outputDirectory>${basedir}/target/docker-stage/opt/onap/sdnc/data/properties</outputDirectory>
+							<resources>
+								<resource>
+									<directory>../src/main/properties</directory>
+									<includes>
+										<include>*.properties</include>
+										<include>*.properties.sdnctldb01</include>
+									</includes>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>-->
+				</executions>
+			</plugin>
         </plugins>
         </build>
         </profile>
