@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_43004daa",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1077
+      },
+      "writtenOn": "2018-08-10T17:33:33Z",
+      "side": 1,
+      "message": "trying to figure this out - I would have thought we just include the war build by maven - all the jars would be packaged up inside the war",
+      "revId": "3f1ed11b31f0fe440eb4337b72631a058f2dfaf3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
