@@ -223,7 +223,7 @@
                         <build>
                             <cleanup>try</cleanup>
                             <dockerFileDir>${project.basedir}/target/docker-stage</dockerFileDir>
-							<dockerFile>${project.basedir}/target/docker-stage/Dockerfile</dockerFile>
+							<!-- <dockerFile>${project.basedir}/target/docker-stage/Dockerfile</dockerFile> -->
                             <tags>
                                 <tag>${docker.snapshot.tag}</tag>
                                 <tag>${docker.latest.tag}</tag>
