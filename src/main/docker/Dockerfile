@@ -16,4 +16,4 @@ RUN chmod 755 $MICROSERVICE_HOME/config/*
 RUN chmod 755 $MICROSERVICE_HOME/lib/*
 RUN chmod 755 $MICROSERVICE_HOME/bin/*
 
-CMD ["/opt/app/bin/startServer.sh"]
+CMD ["/opt/app/bin/startService.sh"]
