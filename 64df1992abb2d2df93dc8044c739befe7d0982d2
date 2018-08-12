@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_196c029c",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-08-12T13:59:48Z",
+      "side": 1,
+      "message": "Sorry, formatting clean up.",
+      "revId": "64df1992abb2d2df93dc8044c739befe7d0982d2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_f90a66d1",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-08-12T13:59:48Z",
+      "side": 1,
+      "message": "This is the real change for this commit.  Spring boot was not packaged as part of the build and caused \"no main manifest attribute\" error on runtime.  \n\nThis should fix it.",
+      "revId": "64df1992abb2d2df93dc8044c739befe7d0982d2",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
