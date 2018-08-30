@@ -38,9 +38,7 @@ public class RestRequest {
 
     private static final String SERVICE_INSTANCE_ID = "serviceInstanceId";
     private static final String MODEL_VERSION_ID = "modelVersionId";
-    private static final String MODE_INVARIANT_ID = "modelInvariantId";
-    private static final String CUSTOMER_ID = "customerId";
-    private static final String SERVICE_TYPE = "serviceType";
+    private static final String MODEL_INVARIANT_ID = "modelInvariantId";
 
     private static final String APP_NAME = "context-aggregator";
 
@@ -91,9 +89,7 @@ public class RestRequest {
                 .host(builder.getHost()).port(builder.getPort()).path(builder.getBaseUri())
                 .queryParam(SERVICE_INSTANCE_ID, event.getServiceInstanceId())
                 .queryParam(MODEL_VERSION_ID, event.getModelVersionId())
-                .queryParam(MODE_INVARIANT_ID, event.getModelInvariantId())
-                .queryParam(SERVICE_TYPE, event.getServiceType()).queryParam(CUSTOMER_ID, event.getCustomerId()).build()
-                .encode();
+                .queryParam(MODEL_INVARIANT_ID, event.getModelInvariantId()).build().encode();
         return uriComponents.toUriString();
     }
 
