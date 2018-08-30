@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_65d08d1f",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3131
+      },
+      "writtenOn": "2018-08-30T20:17:32Z",
+      "side": 1,
+      "message": "Clean up the whitespace (tabs) in this file.",
+      "revId": "1a504e1f20b13fcb582d0e3fceafab8b3687d9ba",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
