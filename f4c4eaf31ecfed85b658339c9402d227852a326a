@@ -16,6 +16,24 @@
       "revId": "f4c4eaf31ecfed85b658339c9402d227852a326a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_5172ef11",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2931
+      },
+      "writtenOn": "2018-08-31T16:11:23Z",
+      "side": 1,
+      "message": "pom.xml is formatted in Eclipse, and My Eclipse import ONAP code style (java) and also has AnyEdit Tools to convert tabs to space and remove trailing whitespace. You an tell me how you did for the space",
+      "parentUuid": "1a76adc5_f1bc5bde",
+      "revId": "f4c4eaf31ecfed85b658339c9402d227852a326a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
