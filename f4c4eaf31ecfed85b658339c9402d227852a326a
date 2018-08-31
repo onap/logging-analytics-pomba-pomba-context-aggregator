@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_f1bc5bde",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2399
+      },
+      "writtenOn": "2018-08-31T15:37:04Z",
+      "side": 1,
+      "message": "Your new format (2 space) makes it harder to read. I know at least 3 MS which use \"4 space\".",
+      "revId": "f4c4eaf31ecfed85b658339c9402d227852a326a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
