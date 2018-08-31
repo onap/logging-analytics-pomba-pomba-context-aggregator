@@ -34,6 +34,23 @@
       "revId": "f4c4eaf31ecfed85b658339c9402d227852a326a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_d1d4bfbe",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/rest/RestRequest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 3479
+      },
+      "writtenOn": "2018-08-31T16:21:41Z",
+      "side": 1,
+      "message": "Good catch",
+      "revId": "f4c4eaf31ecfed85b658339c9402d227852a326a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
