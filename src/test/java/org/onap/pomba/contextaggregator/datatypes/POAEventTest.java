@@ -39,8 +39,6 @@ public class POAEventTest
         pOAEvent.setServiceInstanceId("a");
         pOAEvent.setModelVersionId("b");
         pOAEvent.setModelInvariantId("c");
-        pOAEvent.setCustomerId("d");
-        pOAEvent.setServiceType("e");
         pOAEvent.setxFromAppId("e");
         pOAEvent.setxTransactionId("f");
     }
@@ -77,30 +75,6 @@ public class POAEventTest
     @Test
     public void testValidateEmptyModelInvariantId() throws ContextAggregatorException {
         pOAEvent.setModelInvariantId("");
-
-        try {
-            pOAEvent.validate();
-        }
-        catch (ContextAggregatorException e){
-            assertTrue(e.getMessage().contains("is missing"));
-        }
-    }
-
-    @Test
-    public void testValidateEmptyCustomerId() throws ContextAggregatorException {
-        pOAEvent.setCustomerId("");
-
-        try {
-            pOAEvent.validate();
-        }
-        catch (ContextAggregatorException e){
-            assertTrue(e.getMessage().contains("is missing"));
-        }
-    }
-
-    @Test
-    public void testValidateEmptyServiceType() throws ContextAggregatorException {
-        pOAEvent.setServiceType("");
 
         try {
             pOAEvent.validate();

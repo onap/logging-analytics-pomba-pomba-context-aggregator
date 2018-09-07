@@ -56,8 +56,6 @@ public class AggregatedModelsTest
         pOAEvent.setServiceInstanceId("a");
         pOAEvent.setModelVersionId("b");
         pOAEvent.setModelInvariantId("c");
-        pOAEvent.setCustomerId("d");
-        pOAEvent.setServiceType("e");
         pOAEvent.setxFromAppId("e");
         pOAEvent.setxTransactionId("f");
     }

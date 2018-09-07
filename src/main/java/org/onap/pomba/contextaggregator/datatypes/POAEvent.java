@@ -56,22 +56,6 @@ public class POAEvent {
         this.modelInvariantId = modelInvariantId;
     }
 
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
-
-    public String getServiceType() {
-        return serviceType;
-    }
-
-    public void setServiceType(String serviceType) {
-        this.serviceType = serviceType;
-    }
-
     public String getxFromAppId() {
         return xFromAppId;
     }
@@ -109,17 +93,6 @@ public class POAEvent {
                     "modelInvariantId" + missing);
         }
 
-        // customerId
-        if (getCustomerId() == null || getCustomerId().isEmpty()) {
-            throw new ContextAggregatorException(ContextAggregatorError.INVALID_EVENT_RECEIVED, "customerId" + missing);
-        }
-
-        // serviceType
-        if (getServiceType() == null || getServiceType().isEmpty()) {
-            throw new ContextAggregatorException(ContextAggregatorError.INVALID_EVENT_RECEIVED,
-                    "serviceType" + missing);
-        }
-
         // X-FromAppId
         if (getxFromAppId() == null || getxFromAppId().isEmpty()) {
             throw new ContextAggregatorException(ContextAggregatorError.INVALID_EVENT_RECEIVED, "xFromAppId" + missing);
@@ -137,7 +110,6 @@ public class POAEvent {
     @Override
     public String toString() {
         return "POAEvent [serviceInstanceId=" + serviceInstanceId + ", modelVersionId=" + modelVersionId
-                + ", modelInvariantId=" + modelInvariantId + ", customerId=" + customerId + ", serviceType="
-                + serviceType + ", xFromAppId=" + xFromAppId + ", xTransactionId=" + xTransactionId + "]";
+                + ", modelInvariantId=" + modelInvariantId + ", xFromAppId=" + xFromAppId + ", xTransactionId=" + xTransactionId + "]";
     }
 }
