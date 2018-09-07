@@ -1,0 +1,8 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: James MacNider <James.MacNider@amdocs.com>
+Code-Review+2: Shane Daniel <shane.daniel@amdocs.com>
+Submitted-by: Shane Daniel <shane.daniel@amdocs.com>
+Submitted-at: Fri, 07 Sep 2018 17:36:17 +0000
+Reviewed-on: https://gerrit.onap.org/r/65249
+Project: logging-analytics/pomba/pomba-context-aggregator
+Branch: refs/heads/master
