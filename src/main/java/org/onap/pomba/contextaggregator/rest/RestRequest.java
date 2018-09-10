@@ -59,16 +59,28 @@ public class RestRequest {
     public static String getModelData(ContextBuilder builder, POAEvent event) {
         RestClient restClient = createRestClient(builder);
 
-        OperationResult result = restClient.get(generateUri(builder, event),
-                generateHeaders(event.getxTransactionId(), builder), MediaType.APPLICATION_JSON_TYPE);
+        OperationResult result = null;
 
-        if (result.wasSuccessful()) {
-            log.debug("Retrieved model data for '" + builder.getContextName() + "': " + result.getResult());
-            return result.getResult();
+        try {
+            result = restClient.get(generateUri(builder, event),
+                    generateHeaders(event.getxTransactionId(), builder), MediaType.APPLICATION_JSON_TYPE);
+        } catch(Exception e) {
+            log.error("Error getting result from " + builder.getContextName() + " context builder.  Reason - " + e.getMessage());
+            return null;
+        }
+
+        if(result != null) {
+            if(result.wasSuccessful()) {
+                log.debug("Retrieved model data for '" + builder.getContextName() + "': " + result.getResult());
+                return result.getResult();
+            } else {
+                // failed! return null
+                log.error(ContextAggregatorError.FAILED_TO_GET_MODEL_DATA.getMessage(builder.getContextName(),
+                        result.getFailureCause()));
+                log.debug("Failed to retrieve model data for '" + builder.getContextName());
+                return null;
+            }
         } else {
-            // failed! return null
-            log.error(ContextAggregatorError.FAILED_TO_GET_MODEL_DATA.getMessage(builder.getContextName(),
-                    result.getFailureCause()));
             log.debug("Failed to retrieve model data for '" + builder.getContextName());
             return null;
         }

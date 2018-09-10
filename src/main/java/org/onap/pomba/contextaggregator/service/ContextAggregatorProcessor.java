@@ -94,7 +94,7 @@ public class ContextAggregatorProcessor implements Callable<Void> {
             String modelData = RestRequest.getModelData(builder, event);
             if (modelData == null) {
                 // If one of the Context builder return error, Aggregator will not publish the event
-                log.info("Error returned from one of the Context builder, no event will be published.");
+                log.info("Error returned from one of the Context builders, no event will be published.");
                 return;
             } else {
                 retrievedModels.put(builder.getContextName(), modelData);
