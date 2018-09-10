@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_13ed36b7",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/rest/RestRequest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2018-09-10T19:07:50Z",
+      "side": 1,
+      "message": "e.getMessage() can still return an empty string; many exceptions rely on the exception class to indicate the problem, e.g. NullPointerException, and have no message.\n\nEven when non-empty, the exception class provides context for the message, e.g. a class name without knowing it\u0027s a ClassNotFoundException is difficult to interpret.\n\nSimply log the entire exception with e.toString() instead of e.getMessage() to get the full description.",
+      "revId": "37901c75f865ce54a1a25686cd0287db22958e7e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_b31482a0",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2018-09-10T19:07:50Z",
+      "side": 1,
+      "message": "Another grammar problem here is using a comma to join two sentences; semi-colon or full period would be preferred.",
+      "revId": "37901c75f865ce54a1a25686cd0287db22958e7e",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
