@@ -114,8 +114,8 @@ public class RestRequest {
     }
 
     private static String getBasicAuthString(ContextBuilder builder) {
-        String usernamePasswordString = builder.getUsername() + ":" + builder.getPassword();
-        String encodedString = Base64.getEncoder().encodeToString((usernamePasswordString).getBytes());
+        String encodedString = Base64.getEncoder().encodeToString(( builder.getUsername() + ":" +
+                org.eclipse.jetty.util.security.Password.deobfuscate(builder.getPassword())).getBytes());
         return "Basic " + encodedString;
 
     }
