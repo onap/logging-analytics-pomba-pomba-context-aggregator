@@ -23,6 +23,7 @@ import java.util.Map;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
+import org.eclipse.jetty.util.security.Password;
 import org.onap.aai.restclient.client.Headers;
 import org.onap.aai.restclient.client.OperationResult;
 import org.onap.aai.restclient.client.RestClient;
@@ -41,6 +42,8 @@ public class RestRequest {
     private static final String MODEL_INVARIANT_ID = "modelInvariantId";
 
     private static final String APP_NAME = "context-aggregator";
+
+    private static final String BASIC_AUTH = "Basic ";
 
     private static Logger log = LoggerFactory.getLogger(RestRequest.class);
 
@@ -88,11 +91,6 @@ public class RestRequest {
 
     private static RestClient createRestClient(ContextBuilder builder) {
         return new RestClient()
-                // .validateServerHostname(false)
-                // .validateServerCertChain(true)
-                // .clientCertFile(builder.getKeyStorePath())
-                // .clientCertPassword(builder.getKeyStorePassword())
-                // .trustStore(builder.getTrustStorePath())
                 .connectTimeoutMs(builder.getConnectionTimeout()).readTimeoutMs(builder.getReadTimeout());
     }
 
@@ -114,9 +112,9 @@ public class RestRequest {
     }
 
     private static String getBasicAuthString(ContextBuilder builder) {
-        String usernamePasswordString = builder.getUsername() + ":" + builder.getPassword();
-        String encodedString = Base64.getEncoder().encodeToString((usernamePasswordString).getBytes());
-        return "Basic " + encodedString;
+        String encodedString = Base64.getEncoder().encodeToString(( builder.getUsername() + ":" +
+                Password.deobfuscate(builder.getPassword())).getBytes());
+        return BASIC_AUTH + encodedString;
 
     }
 }
