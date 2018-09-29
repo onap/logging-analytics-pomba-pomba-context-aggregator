@@ -10,7 +10,7 @@
   <parent>
     <groupId>org.onap.oparent</groupId>
     <artifactId>oparent</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <relativePath/>
   </parent>
 
@@ -77,17 +77,6 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.onap.logging-analytics</groupId>
-      <artifactId>logging-slf4j</artifactId>
-      <version>1.2.2-SNAPSHOT</version>
-      <exclusions>
-        <exclusion>
-          <groupId>com.att.eelf</groupId>
-          <artifactId>eelf-core</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
 
     <!-- JUnit dependencies -->
