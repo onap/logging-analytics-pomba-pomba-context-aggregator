@@ -16,6 +16,23 @@
       "revId": "309fb453bd417449a468cf8104ea0169507c8fd9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bada0100_f24da473",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1077
+      },
+      "writtenOn": "2018-10-09T21:04:29Z",
+      "side": 1,
+      "message": "good",
+      "revId": "309fb453bd417449a468cf8104ea0169507c8fd9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
