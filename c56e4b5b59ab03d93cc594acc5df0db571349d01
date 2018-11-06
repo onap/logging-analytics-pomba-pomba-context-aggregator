@@ -1,0 +1,9 @@
+Code-Review+1: Pierre Rioux <pierre.rioux@amdocs.com>
+Code-Review+1: James MacNider <James.MacNider@amdocs.com>
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Geora Barsky <georab@amdocs.com>
+Submitted-by: Geora Barsky <georab@amdocs.com>
+Submitted-at: Tue, 06 Nov 2018 18:59:15 +0000
+Reviewed-on: https://gerrit.onap.org/r/71975
+Project: logging-analytics/pomba/pomba-context-aggregator
+Branch: refs/heads/master
