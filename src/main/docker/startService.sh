@@ -5,8 +5,8 @@ cd /opt/app
 preStartFile="/opt/app/bin/pre_start.sh"
 if [ -f "$preStartFile" ]
 then
-	echo "$preStartFile found."
-        exec $preStartFile
+	echo "Executing $preStartFile ... ..."
+	$preStartFile
 else
 	echo "$preStartFile not found."
 fi
