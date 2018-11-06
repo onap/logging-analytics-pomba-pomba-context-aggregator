@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_c4655246",
+        "filename": "src/main/docker/startService.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2965
+      },
+      "writtenOn": "2018-11-06T17:47:05Z",
+      "side": 1,
+      "message": "Can you echo \"Executing $preStartFile...\" instead of \"found\"",
+      "range": {
+        "startLine": 8,
+        "startChar": 1,
+        "endLine": 8,
+        "endChar": 28
+      },
+      "revId": "c459a51faa8d6206ae1b2457898c96cc4ed42c58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_0474bafb",
+        "filename": "src/main/docker/startService.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2965
+      },
+      "writtenOn": "2018-11-06T17:47:05Z",
+      "side": 1,
+      "message": "Can you remove the else completely?  it doesn\u0027t add anything helpful.",
+      "revId": "c459a51faa8d6206ae1b2457898c96cc4ed42c58",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
