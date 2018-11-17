@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_baf6fad5",
+        "filename": "src/main/docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1077
+      },
+      "writtenOn": "2018-11-17T14:26:58Z",
+      "side": 1,
+      "message": "see the mail by Gildas, no change to the image should be done curl, apt-get, chef ops, git clone etc \nhttps://lists.onap.org/g/onap-discuss/topic/onap_deployment/28150992?p\u003d,,,20,0,0,0::recentpostdate%2Fsticky,,,20,2,0,28150992",
+      "revId": "0ef1ef7cc35c2f786b52f963e7b2dde79de512ff",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
