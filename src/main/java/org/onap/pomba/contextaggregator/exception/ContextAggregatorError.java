@@ -30,7 +30,8 @@ public enum ContextAggregatorError {
     PUBLISHER_SEND_ERROR("CA-106", "Error encountered when publishing messages: {0}"),
     PUBLISHER_CLOSE_ERROR("CA-107", "Error encountered when closing publisher: {0}"),
     FAILED_TO_PUBLISH_RESULT("CA-108", "Failed to publish model data: {0}"),
-    BUILDER_PROPERTIES_NOT_FOUND("CA-109", "No builder properties were found under location(s): {0}");
+    BUILDER_PROPERTIES_NOT_FOUND("CA-109", "No builder properties were found under location(s): {0}"),
+    FAILED_TO_CREATE_POMBA_TOPICS("CA-110", "Failed to create POMBA Topics: {0}");
 
     private String errorId;
     private String message;

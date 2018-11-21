@@ -17,18 +17,21 @@
  */
 package org.onap.pomba.contextaggregator.config;
 
+import java.util.Collection;
 import java.util.Properties;
+
 import org.onap.pomba.contextaggregator.publisher.EventPublisherFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 import com.att.nsa.mr.client.MRClientFactory;
 import com.att.nsa.mr.client.MRConsumer;
+import com.att.nsa.mr.client.MRTopicManager;
 import com.att.nsa.mr.client.impl.MRConsumerImpl;
 
 @Configuration
 public class TransportConfig {
-
     @Bean
     public MRConsumer consumer(@Value("${transport.consume.host}") String host,
             @Value("${transport.consume.port}") String port, @Value("${transport.consume.topic}") String topic,
@@ -37,6 +40,7 @@ public class TransportConfig {
             @Value("${transport.consume.consumerid}") String consumerId,
             @Value("${transport.consume.timeout}") int timeout, @Value("${transport.consume.batchsize}") int batchSize,
             @Value("${transport.consume.msglimit}") int msgLimit, @Value("${transport.consume.type}") String type) {
+
 
         String hostStr = host + ":" + port;
 
@@ -48,6 +52,25 @@ public class TransportConfig {
         ((MRConsumerImpl) consumer).setProps(extraProps);
 
         return consumer;
+    }
+
+    @Bean
+    public MRTopicManager messageRouterTopicMgr (@Value("${transport.consume.host}") String host,
+            @Value("${transport.consume.port}") String port,
+            @Value("${transport.message-router.apiKey}") String apiKey,
+            @Value("${transport.message-router.apiSecret}") String apiSecret
+            ) {
+
+        String hostStr = host + ":" + port;
+        // Verify if all topics ()
+        Collection<String> hostSet = java.util.Arrays.asList(hostStr);
+        MRTopicManager mgr = MRClientFactory.createTopicManager(hostSet, apiKey, apiSecret);
+        return mgr;
+    }
+
+    @Bean
+    public String messageRouterRequiredPombaTopicList(@Value("${transport.message-router.requiredPombaTopics}") String requiredPombaTopics) {
+        return requiredPombaTopics;
     }
 
     @Bean
@@ -63,4 +86,5 @@ public class TransportConfig {
         return new EventPublisherFactory(hostStr, topic, motsid, pass, batchSize, maxAge, delay, type, partition,
                 retries);
     }
+
 }
