@@ -20,16 +20,22 @@ package org.onap.pomba.contextaggregator.service;
 import com.att.aft.dme2.internal.gson.Gson;
 import com.att.aft.dme2.internal.gson.GsonBuilder;
 import com.att.aft.dme2.internal.gson.JsonSyntaxException;
+import com.att.nsa.apiClient.http.HttpException;
 import com.att.nsa.mr.client.MRBatchingPublisher;
+import com.att.nsa.mr.client.MRClientFactory;
 import com.att.nsa.mr.client.MRConsumer;
 import com.att.nsa.mr.client.MRPublisher;
+import com.att.nsa.mr.client.MRTopicManager;
 import com.att.nsa.mr.client.impl.MRSimplerBatchPublisher;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -46,6 +52,8 @@ import org.onap.pomba.contextaggregator.rest.RestRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -58,6 +66,12 @@ public class ContextAggregatorProcessor implements Callable<Void> {
 
     @Autowired
     private MRConsumer consumer;
+
+    @Autowired
+    private MRTopicManager messageRouterTopicMgr;
+
+    @Autowired
+    private String messageRouterRequiredAuditTopicList;
 
     @Autowired
     private EventPublisherFactory publisherFactory;
@@ -110,6 +124,8 @@ public class ContextAggregatorProcessor implements Callable<Void> {
 
     @Override
     public Void call() throws Exception {
+        createAuditTopics();
+
         while (true) {
             for (String event : consumer.fetch()) {
                 executor.execute(() -> {
@@ -231,6 +247,36 @@ public class ContextAggregatorProcessor implements Callable<Void> {
         } catch (Exception e) {
             throw new ContextAggregatorException(ContextAggregatorError.PUBLISHER_CLOSE_ERROR, e.getMessage());
         }
+    }
+
+    private List<String> getRequiredTopicList(String messageRouterRequiredAuditTopicList) {
+        List<String> auditTopicList = new ArrayList<String>();
+        String noSpaceAuditTopicList = messageRouterRequiredAuditTopicList.replaceAll("\\s", "");
+        String[] auditTopicStrSet = noSpaceAuditTopicList.split(",");
+        for (int i = 0; i < auditTopicStrSet.length; i++) {
+                auditTopicList.add(new String(auditTopicStrSet[i]));
+        }
+        return auditTopicList;
+    }
+
+    private void createAuditTopics () {
+
+        List<String> requiredTopicList = getRequiredTopicList(messageRouterRequiredAuditTopicList);
+
+        String topicDescription = "create default topic";
+        int partitionCount = 1;
+        int replicationCount = 1;
+
+        for ( String topic_required : requiredTopicList) {
+                try {
+                    messageRouterTopicMgr.createTopic(topic_required, topicDescription, partitionCount, replicationCount);
+                } catch (HttpException e1) {
+                    e1.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+         }
     }
 
 }
