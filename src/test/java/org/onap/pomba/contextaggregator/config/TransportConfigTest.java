@@ -25,11 +25,17 @@ import org.junit.runner.RunWith;
 import org.onap.pomba.contextaggregator.publisher.EventPublisherFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.TestPropertySource;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
 import java.util.Properties;
 
 @RunWith(SpringJUnit4ClassRunner.class)
+@EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class })
 @SpringBootTest
+@TestPropertySource(properties = { "transport.consume.host=http://localhost", "transport.consume.port=8080" })
 public class TransportConfigTest
 {
     TransportConfig transportConfig = new TransportConfig();
