@@ -50,6 +50,23 @@
       "revId": "a74c306af14723da1f8a24bea5e3a8016dc449e0",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_55478f1d",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/config/TransportConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2965
+      },
+      "writtenOn": "2018-11-22T19:11:14Z",
+      "side": 1,
+      "message": "You don\u0027t need to create a bean for a simple attribute, you can use @Value with the name of the property directly in the ContextAggregatorProcessor class: \n@Value(\"${transport.message-router.requiredPombaTopics}\")\n\nAlso (and I\u0027m nit-picking again), can the property be called \"dmaap.requiredPombaTopics\"... or something like that?\nIt has nothing to do with transport.",
+      "revId": "a74c306af14723da1f8a24bea5e3a8016dc449e0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
