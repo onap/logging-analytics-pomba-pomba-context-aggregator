@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_446e0731",
+        "filename": "config/application.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2965
+      },
+      "writtenOn": "2018-11-22T06:00:09Z",
+      "side": 1,
+      "message": "I know this may be picky on my part but can we rename this to \"requiredPombaTopics\"?\nThe reason is because we have to make sure this attribute refers to POMBA as a whole and is not just about context-aggregator.",
+      "range": {
+        "startLine": 19,
+        "startChar": 25,
+        "endLine": 19,
+        "endChar": 47
+      },
+      "revId": "f84297ac5fcb7c14c80d3e5b75aa370900127660",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
