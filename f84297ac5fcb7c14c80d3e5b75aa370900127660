@@ -22,6 +22,57 @@
       "revId": "f84297ac5fcb7c14c80d3e5b75aa370900127660",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_9a10c4a9",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 659
+      },
+      "writtenOn": "2018-11-22T14:32:07Z",
+      "side": 1,
+      "message": "Out of curiosity, what will createTopic do if the topic already exists?",
+      "revId": "f84297ac5fcb7c14c80d3e5b75aa370900127660",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_3a275814",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 659
+      },
+      "writtenOn": "2018-11-22T14:32:07Z",
+      "side": 1,
+      "message": "please log a proper error rather than printing the stack trace",
+      "revId": "f84297ac5fcb7c14c80d3e5b75aa370900127660",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_5a225c02",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 659
+      },
+      "writtenOn": "2018-11-22T14:32:07Z",
+      "side": 1,
+      "message": "please log a proper error rather than printing the stack trace",
+      "revId": "f84297ac5fcb7c14c80d3e5b75aa370900127660",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
