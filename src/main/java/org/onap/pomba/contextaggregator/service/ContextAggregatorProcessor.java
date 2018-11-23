@@ -70,7 +70,7 @@ public class ContextAggregatorProcessor implements Callable<Void> {
     @Autowired
     private MRTopicManager messageRouterTopicMgr;
 
-    @Autowired
+    @Value("${transport.message-router.requiredPombaTopics}")
     private String messageRouterRequiredPombaTopicList;
 
     @Autowired
@@ -122,6 +122,14 @@ public class ContextAggregatorProcessor implements Callable<Void> {
         }
     }
 
+    /**
+     * The configurable POMBA Topics (POA-AUDIT-INIT,POA-AUDIT-RESULT,POA-RULE-VALIDATION, etc.)
+     * will be created if any of topics doesn't exist prior to be invoked.
+     *
+     * @param eventPayload
+     * @return
+     * @throws ContextAggregatorException
+     */
     @Override
     public Void call() throws Exception {
         createPombaTopics();

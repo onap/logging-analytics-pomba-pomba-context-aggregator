@@ -68,10 +68,6 @@ public class TransportConfig {
         return mgr;
     }
 
-    @Bean
-    public String messageRouterRequiredPombaTopicList(@Value("${transport.message-router.requiredPombaTopics}") String requiredPombaTopics) {
-        return requiredPombaTopics;
-    }
 
     @Bean
     public EventPublisherFactory publisherFactory(@Value("${transport.publish.host}") String host,
