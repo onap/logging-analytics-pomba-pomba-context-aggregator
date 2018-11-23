@@ -70,7 +70,7 @@ public class ContextAggregatorProcessor implements Callable<Void> {
     @Autowired
     private MRTopicManager messageRouterTopicMgr;
 
-    @Autowired
+    @Value("${transport.message-router.requiredPombaTopics}")
     private String messageRouterRequiredPombaTopicList;
 
     @Autowired
