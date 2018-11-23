@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adffdf1_3cf753f7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 659
+      },
+      "writtenOn": "2018-11-23T21:00:20Z",
+      "side": 1,
+      "message": "This issue ID has nothing to do with this code change",
+      "revId": "a809971ace2a6de9c6bd1f2e49a07f8921d9111b",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
