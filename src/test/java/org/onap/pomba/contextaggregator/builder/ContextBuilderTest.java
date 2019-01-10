@@ -15,7 +15,11 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.builder;
+
+import java.io.File;
+import java.io.IOException;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -25,24 +29,18 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.io.File;
-import java.io.IOException;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class ContextBuilderTest
-{
+public class ContextBuilderTest {
     private ContextBuilder contextBuilder;
 
     @Before
-    public void setUp() throws IOException
-    {
+    public void setUp() throws IOException {
         MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    public void testGetEntity() throws Exception
-    {
+    public void testGetEntity() throws Exception {
         File configFile =
                 new File("./src/test/resources/GoodProperties/sdnc.properties");
         contextBuilder = new ContextBuilder(configFile);

@@ -15,6 +15,7 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.exception;
 
 import org.junit.Assert;
@@ -25,14 +26,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class ContextAggregatorErrorTest
-{
+public class ContextAggregatorErrorTest {
+
     ContextAggregatorError contextAggregatorError =
             ContextAggregatorError.GENERAL_ERROR;
 
     @Test
-    public void testGetMessage() throws Exception
-    {
+    public void testGetMessage() throws Exception {
         String result = contextAggregatorError.getMessage(null);
         Assert.assertEquals(contextAggregatorError.GENERAL_ERROR.getMessage(), result);
     }

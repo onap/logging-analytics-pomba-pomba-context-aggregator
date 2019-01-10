@@ -15,7 +15,11 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.service;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,13 +30,10 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class ContextAggregatorServiceTest
-{
+public class ContextAggregatorServiceTest {
+
     @Mock
     ContextAggregatorProcessor processor;
     @Mock
@@ -43,14 +44,12 @@ public class ContextAggregatorServiceTest
     ContextAggregatorService contextAggregatorService;
 
     @Before
-    public void setUp()
-    {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    public void testInit() throws Exception
-    {
+    public void testInit() throws Exception {
         contextAggregatorService.init();
     }
 }

@@ -15,7 +15,11 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.datatypes;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,13 +30,10 @@ import org.onap.pomba.contextaggregator.config.EventHeaderConfig;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class AggregatedModelsTest
-{
+public class AggregatedModelsTest {
+
     AggregatedModels aggregatedModels;
 
     private String domain;
@@ -50,8 +51,7 @@ public class AggregatedModelsTest
     POAEvent pOAEvent = new POAEvent();
 
     @Before
-    public void setUp()
-    {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
         pOAEvent.setServiceInstanceId("a");
         pOAEvent.setModelVersionId("b");
@@ -61,8 +61,7 @@ public class AggregatedModelsTest
     }
 
     @Test
-    public void testGenerateJsonPayload() throws Exception
-    {
+    public void testGenerateJsonPayload() throws Exception {
         aggregatedModels = new AggregatedModels(eventHeaderConfig,jsonContextMap,pOAEvent);
         Assert.assertNotNull(aggregatedModels.generateJsonPayload());
         Assert.assertNotNull(aggregatedModels.getEntityHeader());

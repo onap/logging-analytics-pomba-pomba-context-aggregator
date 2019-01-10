@@ -15,7 +15,10 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.publisher;
+
+import static org.junit.Assert.assertEquals;
 
 import com.att.nsa.mr.client.MRBatchingPublisher;
 import org.junit.Assert;
@@ -24,12 +27,10 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.assertEquals;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
- public class EventPublisherFactoryTest
-{
+public class EventPublisherFactoryTest {
+
     @Test
     public void testgetPartition() {
         EventPublisherFactory pojo = new EventPublisherFactory(
@@ -45,22 +46,20 @@ import static org.junit.Assert.assertEquals;
     }
 
     @Test
-    public void testCreatePublisherNullPublisher() throws IllegalArgumentException
-    {
+    public void testCreatePublisherNullPublisher() throws IllegalArgumentException {
         EventPublisherFactory eventPublisherFactory =
                 new EventPublisherFactory("host", "topic", "motsid", "pass", 0, 0,
                         0, "type", "partition", 0);
-        try{
+        try {
             eventPublisherFactory.createPublisher();
-       }
-        catch (IllegalArgumentException e){
+        }
+        catch (IllegalArgumentException e) {
             // Expected
         }
     }
 
     @Test
-    public void testCreatePublisher()
-    {
+    public void testCreatePublisher() {
         EventPublisherFactory eventPublisherFactory =
                 new EventPublisherFactory("host", "topic", "motsid", "pass", 0, 0,
                         1, "type", "partition", 0);

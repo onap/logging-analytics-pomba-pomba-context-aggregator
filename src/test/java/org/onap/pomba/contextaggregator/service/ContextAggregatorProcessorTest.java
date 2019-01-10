@@ -15,9 +15,14 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.service;
 
+import static org.mockito.Mockito.when;
+
 import com.att.nsa.mr.client.MRConsumer;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,16 +37,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-
-import static org.mockito.Mockito.*;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @ConfigurationProperties("classpath:/src/test/resources/GoodProperties/sdnc.properties")
-public class ContextAggregatorProcessorTest
-{
+public class ContextAggregatorProcessorTest {
+
     @Mock
     Logger log;
     @Mock
@@ -60,25 +60,23 @@ public class ContextAggregatorProcessorTest
     @InjectMocks
     ContextAggregatorProcessor contextAggregatorProcessor;
 
-    private String payload = "{"  +
-            "        \"serviceInstanceId\""  + ": " +  "\"8ea56b0d-459d-4668-b363-c9567432d8b7\"" + "," +
-            "        \"modelVersionId\""     + ": " +  "\"4e3d28cf-d654-41af-a47b-04b4bd0ac58e\"" + "," +
-            "        \"modelInvariantId\""   + ": " +  "\"74bc1518-282d-4148-860f-8892b6369456\"" + "," +
-            "        \"customerId\""         + ": " +  "\"junit\""                                + "," +
-            "        \"serviceType\""        + ": " +  "\"vFWCL\""                                + "," +
-            "        \"xFromAppId\""         + ": " +  "\"POMBA\""                                + "," +
-            "        \"xTransactionId\""     + ": " +  "\"8a9ddb25-2e79-449c-a40d-5011bac0da39\""                              +
-            "}";
+    private String payload = "{"
+            + "        \"serviceInstanceId\""  + ": " +  "\"8ea56b0d-459d-4668-b363-c9567432d8b7\","
+            + "        \"modelVersionId\""     + ": " +  "\"4e3d28cf-d654-41af-a47b-04b4bd0ac58e\","
+            + "        \"modelInvariantId\""   + ": " +  "\"74bc1518-282d-4148-860f-8892b6369456\","
+            + "        \"customerId\""         + ": " +  "\"junit\","
+            + "        \"serviceType\""        + ": " +  "\"vFWCL\","
+            + "        \"xFromAppId\""         + ": " +  "\"POMBA\","
+            + "        \"xTransactionId\""     + ": " +  "\"8a9ddb25-2e79-449c-a40d-5011bac0da39\","
+            + "}";
 
     @Before
-    public void setUp()
-    {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    public void testProcessNullPublisherInvalidPayload() throws Exception
-    {
+    public void testProcessNullPublisherInvalidPayload() throws Exception {
         when(publisherFactory.getPartition())
                 .thenReturn("getPartitionResponse");
         when(publisherFactory.getRetries()).thenReturn(0);
@@ -96,14 +94,13 @@ public class ContextAggregatorProcessorTest
         try {
             contextAggregatorProcessor.process("");
         }
-        catch (Exception e){
+        catch (Exception e) {
             // expected
         }
     }
 
     @Test
-    public void testProcessNullPublisherValidPayload() throws Exception
-    {
+    public void testProcessNullPublisherValidPayload() throws Exception {
         when(publisherFactory.getPartition())
                 .thenReturn("getPartitionResponse");
         when(publisherFactory.getRetries()).thenReturn(0);

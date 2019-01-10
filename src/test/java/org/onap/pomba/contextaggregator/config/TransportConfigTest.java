@@ -15,34 +15,33 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.config;
 
 import com.att.nsa.mr.client.MRConsumer;
 import com.att.nsa.mr.client.impl.MRConsumerImpl;
+import java.util.Properties;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.onap.pomba.contextaggregator.publisher.EventPublisherFactory;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
-
-import java.util.Properties;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class })
 @SpringBootTest
 @TestPropertySource(properties = { "transport.consume.host=http://localhost", "transport.consume.port=8080" })
-public class TransportConfigTest
-{
+public class TransportConfigTest {
+
     TransportConfig transportConfig = new TransportConfig();
 
     @Test
-    public void testConsumer() throws Exception
-    {
+    public void testConsumer() throws Exception {
         MRConsumer result = transportConfig
                 .consumer("host", "port", "topic", "motsid", "pass",
                         "consumerGroup", "consumerId", 0, 0, 0, "type");
@@ -54,13 +53,12 @@ public class TransportConfigTest
     }
 
     @Test
-    public void testPublisherFactory() throws Exception
-    {
+    public void testPublisherFactory() throws Exception {
         EventPublisherFactory result = transportConfig
                 .publisherFactory("host", "port", "topic", "motsid", "pass", 0,
                         0, 0, "type", "partition", 0);
-        EventPublisherFactory lEventPublisherFactory = new EventPublisherFactory("host:port", "topic", "motsid", "pass", 0,
-                0, 0, "type", "partition", 0);
+        EventPublisherFactory lEventPublisherFactory = new EventPublisherFactory("host:port", "topic", "motsid",
+                "pass", 0, 0, 0, "type", "partition", 0);
         Assert.assertEquals(lEventPublisherFactory.getPartition(), result.getPartition());
         Assert.assertEquals(lEventPublisherFactory.getRetries(), result.getRetries());
     }

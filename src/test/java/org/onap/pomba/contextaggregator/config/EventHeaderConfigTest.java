@@ -15,6 +15,7 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.config;
 
 import org.junit.Assert;
@@ -25,8 +26,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class EventHeaderConfigTest
-{
+public class EventHeaderConfigTest {
 
     private String domain;
     private String sourceName;
@@ -37,6 +37,7 @@ public class EventHeaderConfigTest
 
     EventHeaderConfig eventHeaderConfig = new EventHeaderConfig(
             domain, sourceName, eventType, entityType, topicEntityType, topicName);
+
     @Test
     public void getDomainTest() {
         Assert.assertEquals(eventHeaderConfig.getDomain(), domain);

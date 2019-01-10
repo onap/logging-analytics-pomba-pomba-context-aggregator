@@ -15,7 +15,10 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.rest;
+
+import java.io.File;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -29,27 +32,23 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.io.File;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @ConfigurationProperties("classpath:/src/test/resources/GoodProperties/sdnc.properties")
- public class RestRequestTest
-{
+public class RestRequestTest {
+
     @Mock
     Logger log;
     @InjectMocks
     RestRequest restRequest;
 
     @Before
-    public void setUp()
-    {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    public void testGetModelData() throws Exception
-    {
+    public void testGetModelData() throws Exception {
         File configFile =
                 new File("./src/test/resources/GoodProperties/sdnc.properties");
         ContextBuilder contextBuilder = new ContextBuilder(configFile);

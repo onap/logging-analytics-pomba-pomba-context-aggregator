@@ -15,7 +15,10 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.datatypes;
+
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -25,17 +28,14 @@ import org.onap.pomba.contextaggregator.exception.ContextAggregatorException;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.assertTrue;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class POAEventTest
-{
+public class POAEventTest {
+
     POAEvent pOAEvent = new POAEvent();
 
     @Before
-    public void setup()
-    {
+    public void setup() {
         pOAEvent.setServiceInstanceId("a");
         pOAEvent.setModelVersionId("b");
         pOAEvent.setModelInvariantId("c");
@@ -44,8 +44,7 @@ public class POAEventTest
     }
 
     @Test
-    public void testValidate() throws ContextAggregatorException
-    {
+    public void testValidate() throws ContextAggregatorException {
         pOAEvent.validate();
     }
 
@@ -55,7 +54,7 @@ public class POAEventTest
         try {
             pOAEvent.validate();
         }
-        catch (ContextAggregatorException e){
+        catch (ContextAggregatorException e) {
             assertTrue(e.getMessage().contains("is missing"));
         }
     }
@@ -67,7 +66,7 @@ public class POAEventTest
         try {
             pOAEvent.validate();
         }
-        catch (ContextAggregatorException e){
+        catch (ContextAggregatorException e) {
             assertTrue(e.getMessage().contains("is missing"));
         }
     }
@@ -79,7 +78,7 @@ public class POAEventTest
         try {
             pOAEvent.validate();
         }
-        catch (ContextAggregatorException e){
+        catch (ContextAggregatorException e) {
             assertTrue(e.getMessage().contains("is missing"));
         }
     }
@@ -91,7 +90,7 @@ public class POAEventTest
         try {
             pOAEvent.validate();
         }
-        catch (ContextAggregatorException e){
+        catch (ContextAggregatorException e) {
             assertTrue(e.getMessage().contains("is missing"));
         }
     }
@@ -103,14 +102,13 @@ public class POAEventTest
         try {
             pOAEvent.validate();
         }
-        catch (ContextAggregatorException e){
+        catch (ContextAggregatorException e) {
             assertTrue(e.getMessage().contains("is missing"));
         }
     }
 
     @Test
-    public void testToString()
-    {
+    public void testToString() {
         String result = pOAEvent.toString();
         Assert.assertNotEquals("", result);
     }
