@@ -17,17 +17,6 @@
  */
 package org.onap.pomba.contextaggregator.service;
 
-import com.att.aft.dme2.internal.gson.Gson;
-import com.att.aft.dme2.internal.gson.GsonBuilder;
-import com.att.aft.dme2.internal.gson.JsonSyntaxException;
-import com.att.nsa.apiClient.http.HttpException;
-import com.att.nsa.mr.client.MRBatchingPublisher;
-import com.att.nsa.mr.client.MRClientFactory;
-import com.att.nsa.mr.client.MRConsumer;
-import com.att.nsa.mr.client.MRPublisher;
-import com.att.nsa.mr.client.MRTopicManager;
-import com.att.nsa.mr.client.impl.MRSimplerBatchPublisher;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,12 +24,12 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+
 import org.onap.pomba.contextaggregator.builder.ContextBuilder;
 import org.onap.pomba.contextaggregator.config.EventHeaderConfig;
 import org.onap.pomba.contextaggregator.datatypes.AggregatedModels;
@@ -53,8 +42,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+
+import com.att.aft.dme2.internal.gson.Gson;
+import com.att.aft.dme2.internal.gson.GsonBuilder;
+import com.att.aft.dme2.internal.gson.JsonSyntaxException;
+import com.att.nsa.apiClient.http.HttpException;
+import com.att.nsa.mr.client.MRBatchingPublisher;
+import com.att.nsa.mr.client.MRConsumer;
+import com.att.nsa.mr.client.MRPublisher;
+import com.att.nsa.mr.client.MRTopicManager;
+import com.att.nsa.mr.client.impl.MRSimplerBatchPublisher;
 
 @Component
 public class ContextAggregatorProcessor implements Callable<Void> {

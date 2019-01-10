@@ -25,8 +25,6 @@ public class POAEvent {
     private String serviceInstanceId;
     private String modelVersionId;
     private String modelInvariantId;
-    private String customerId;
-    private String serviceType;
     private String xFromAppId;
     private String xTransactionId;
 

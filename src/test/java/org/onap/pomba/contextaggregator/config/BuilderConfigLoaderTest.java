@@ -15,7 +15,10 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.config;
+
+import java.io.File;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -28,13 +31,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.io.File;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @ConfigurationProperties("classpath:/src/test/resources/GoodProperties/sdnc.properties")
-public class BuilderConfigLoaderTest
-{
+public class BuilderConfigLoaderTest {
+
     @InjectMocks
     private BuilderConfigLoader builderConfigLoader;
 
@@ -43,16 +44,14 @@ public class BuilderConfigLoaderTest
     private String buildersPropertiesPath ;
 
     @Before
-    public void setUp()
-    {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    public void testContextBuilders()
-    {
+    public void testContextBuilders() {
         buildersPropertiesPath = new File(
                 "./src/test/resources/GoodProperties/").getAbsolutePath();
-         builderConfigLoader.contextBuilders();
+        builderConfigLoader.contextBuilders();
     }
 }

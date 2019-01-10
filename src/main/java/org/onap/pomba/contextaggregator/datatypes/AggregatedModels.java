@@ -53,7 +53,6 @@ public class AggregatedModels {
             ModelContext context = null;
             if (entry.getValue().isEmpty()) {
                 context = new ModelContext();
-                context.setVfs(null);
             } else {
                 context = gson.fromJson(entry.getValue(), ModelContext.class);
             }

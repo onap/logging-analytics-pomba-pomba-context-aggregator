@@ -15,6 +15,7 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator;
 
 import org.junit.Test;
@@ -24,12 +25,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-public class ApplicationTest
-{
+public class ApplicationTest {
 
     @Test
-    public void testMain() throws Exception
-    {
+    public void testMain() throws Exception {
         Application.main(new String[]{"args"});
     }
 }
