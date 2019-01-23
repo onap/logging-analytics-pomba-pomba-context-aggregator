@@ -30,6 +30,7 @@ import org.onap.aai.restclient.client.RestClient;
 import org.onap.pomba.contextaggregator.builder.ContextBuilder;
 import org.onap.pomba.contextaggregator.datatypes.POAEvent;
 import org.onap.pomba.contextaggregator.exception.ContextAggregatorError;
+import org.onap.pomba.contextaggregator.exception.ContextAggregatorException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.util.UriComponents;
@@ -53,40 +54,38 @@ public class RestRequest {
     }
 
     /**
-     * Retrieves the model data from the given context builder
+     * Retrieves the model data from the given context builder.
      *
-     * @param builder
-     * @param event
+     * @param builder The context builder.
+     * @param event The audit event.
      * @return Returns the JSON response from the context builder
      */
-    public static String getModelData(ContextBuilder builder, POAEvent event) {
+    public static String getModelData(ContextBuilder builder, POAEvent event) throws ContextAggregatorException {
         RestClient restClient = createRestClient(builder);
 
-        OperationResult result = null;
-
+        OperationResult result;
+        
         try {
-            result = restClient.get(generateUri(builder, event),
-                    generateHeaders(event.getxTransactionId(), builder), MediaType.APPLICATION_JSON_TYPE);
-        } catch(Exception e) {
-            log.error("Error getting result from " + builder.getContextName() + " context builder.  Reason - " + e.getMessage());
-            return null;
+            result = restClient.get(generateUri(builder, event), generateHeaders(event.getxTransactionId(), builder),
+                    MediaType.APPLICATION_JSON_TYPE);
+        } catch (Exception e) {
+            log.error("Exception in Rest call", e);
+            throw new ContextAggregatorException(ContextAggregatorError.FAILED_TO_GET_MODEL_DATA,
+                    builder.getContextName(), e.getMessage());
         }
 
-        if(result != null) {
-            if(result.wasSuccessful()) {
-                log.debug("Retrieved model data for '" + builder.getContextName() + "': " + result.getResult());
-                return result.getResult();
-            } else {
-                // failed! return null
-                log.error(ContextAggregatorError.FAILED_TO_GET_MODEL_DATA.getMessage(builder.getContextName(),
-                        result.getFailureCause()));
-                log.debug("Failed to retrieve model data for '" + builder.getContextName());
-                return null;
-            }
-        } else {
-            log.debug("Failed to retrieve model data for '" + builder.getContextName());
-            return null;
+        if (result == null) {
+            throw new ContextAggregatorException(ContextAggregatorError.FAILED_TO_GET_MODEL_DATA,
+                    builder.getContextName(), "Null result");
         }
+        if (result.wasSuccessful()) {
+            log.info("Retrieved model data for '{}' context builder. Result: {}", builder.getContextName(), result.getResult());
+            return result.getResult();
+        }
+        // failed! throw Exception:
+        throw new ContextAggregatorException(ContextAggregatorError.FAILED_TO_GET_MODEL_DATA, builder.getContextName(),
+                result.getFailureCause());
+
     }
 
     private static RestClient createRestClient(ContextBuilder builder) {
@@ -112,8 +111,8 @@ public class RestRequest {
     }
 
     private static String getBasicAuthString(ContextBuilder builder) {
-        String encodedString = Base64.getEncoder().encodeToString(( builder.getUsername() + ":" +
-                Password.deobfuscate(builder.getPassword())).getBytes());
+        String encodedString = Base64.getEncoder()
+                .encodeToString((builder.getUsername() + ":" + Password.deobfuscate(builder.getPassword())).getBytes());
         return BASIC_AUTH + encodedString;
 
     }
