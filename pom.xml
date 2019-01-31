@@ -151,7 +151,7 @@
           <plugin>
             <groupId>io.fabric8</groupId>
             <artifactId>docker-maven-plugin</artifactId>
-            <version>0.19.1</version>
+            <version>0.28.0</version>
             <configuration>
               <verbose>true</verbose>
               <apiVersion>1.23</apiVersion>
@@ -173,7 +173,6 @@
             <executions>
               <execution>
                 <id>generate-images</id>
-                <phase>generate-sources</phase>
                 <goals>
                   <goal>build</goal>
                 </goals>
