@@ -17,9 +17,13 @@
  */
 package org.onap.pomba.contextaggregator.rest;
 
+import java.net.InetAddress;
+import java.text.SimpleDateFormat;
 import java.util.Base64;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
@@ -33,6 +37,7 @@ import org.onap.pomba.contextaggregator.exception.ContextAggregatorError;
 import org.onap.pomba.contextaggregator.exception.ContextAggregatorException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -41,10 +46,21 @@ public class RestRequest {
     private static final String SERVICE_INSTANCE_ID = "serviceInstanceId";
     private static final String MODEL_VERSION_ID = "modelVersionId";
     private static final String MODEL_INVARIANT_ID = "modelInvariantId";
-
     private static final String APP_NAME = "context-aggregator";
-
     private static final String BASIC_AUTH = "Basic ";
+
+    private static final String MDC_REQUEST_ID = "RequestId";
+    private static final String MDC_SERVER_FQDN = "ServerFQDN";
+    private static final String MDC_SERVICE_NAME = "ServiceName";
+    private static final String MDC_PARTNER_NAME = "PartnerName";
+    private static final String MDC_START_TIME = "StartTime";
+    private static final String MDC_SERVICE_INSTANCE_ID = "ServiceInstanceId";
+    private static final String MDC_INVOCATION_ID = "InvocationID";
+    private static final String MDC_CLIENT_ADDRESS = "ClientAddress";
+
+    private static final String MDC_STATUS_CODE = "StatusCode";
+    private static final String MDC_RESPONSE_CODE = "ResponseCode";
+    private static final String MDC_INSTANCE_UUID = "InstanceUUID";
 
     private static Logger log = LoggerFactory.getLogger(RestRequest.class);
 
@@ -60,11 +76,13 @@ public class RestRequest {
      * @param event The audit event.
      * @return Returns the JSON response from the context builder
      */
-    public static String getModelData(ContextBuilder builder, POAEvent event) throws ContextAggregatorException {
+    public static String getModelData(ContextBuilder builder, POAEvent event, UUID instanceUUID) throws ContextAggregatorException {
+
+        initMdc(event, instanceUUID);
         RestClient restClient = createRestClient(builder);
 
         OperationResult result;
-        
+
         try {
             result = restClient.get(generateUri(builder, event), generateHeaders(event.getxTransactionId(), builder),
                     MediaType.APPLICATION_JSON_TYPE);
@@ -75,18 +93,43 @@ public class RestRequest {
         }
 
         if (result == null) {
+            MDC.put(MDC_STATUS_CODE, "ERROR");
             throw new ContextAggregatorException(ContextAggregatorError.FAILED_TO_GET_MODEL_DATA,
                     builder.getContextName(), "Null result");
         }
         if (result.wasSuccessful()) {
+            MDC.put(MDC_RESPONSE_CODE, String.valueOf(result.getResultCode()));
+            MDC.put(MDC_STATUS_CODE, "COMPLETE");
             log.info("Retrieved model data for '{}' context builder. Result: {}", builder.getContextName(), result.getResult());
             return result.getResult();
         }
         // failed! throw Exception:
+        MDC.put(MDC_STATUS_CODE, "ERROR");
         throw new ContextAggregatorException(ContextAggregatorError.FAILED_TO_GET_MODEL_DATA, builder.getContextName(),
                 result.getFailureCause());
 
     }
+
+    private static void initMdc(POAEvent event, UUID instanceUUID) {
+        MDC.clear();
+        MDC.put(MDC_REQUEST_ID, event.getxTransactionId());
+        MDC.put(MDC_SERVICE_NAME, APP_NAME);
+        MDC.put(MDC_SERVICE_INSTANCE_ID, event.getServiceInstanceId());
+        MDC.put(MDC_PARTNER_NAME, event.getxFromAppId());
+        MDC.put(MDC_START_TIME, new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX").format(new Date()));
+        MDC.put(MDC_INVOCATION_ID, UUID.randomUUID().toString());
+        MDC.put(MDC_INSTANCE_UUID, instanceUUID.toString());
+
+        try {
+            MDC.put(MDC_CLIENT_ADDRESS, InetAddress.getLocalHost().getCanonicalHostName());
+        } catch (Exception e) {
+            // If, for some reason we are unable to get the canonical host name,
+            // we
+            // just want to leave the field null.
+            log.info("Could not get canonical host name for " + MDC_SERVER_FQDN + ", leaving field null");
+        }
+    }
+
 
     private static RestClient createRestClient(ContextBuilder builder) {
         return new RestClient()

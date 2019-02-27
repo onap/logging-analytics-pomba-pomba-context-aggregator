@@ -27,7 +27,6 @@ import com.att.nsa.mr.client.MRConsumer;
 import com.att.nsa.mr.client.MRPublisher;
 import com.att.nsa.mr.client.MRTopicManager;
 import com.att.nsa.mr.client.impl.MRSimplerBatchPublisher;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,12 +34,12 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
-
 import org.onap.pomba.common.datatypes.DataQuality;
 import org.onap.pomba.common.datatypes.DataQuality.Status;
 import org.onap.pomba.common.datatypes.ModelContext;
@@ -65,6 +64,7 @@ public class ContextAggregatorProcessor implements Callable<Void> {
     private static final Gson gson = new GsonBuilder().disableHtmlEscaping().create();
     private ExecutorService executor = Executors.newFixedThreadPool(10);
     private int retriesRemaining;
+    private static UUID instanceUUID = UUID.randomUUID();
 
     @Autowired
     private MRConsumer consumer;
@@ -108,7 +108,7 @@ public class ContextAggregatorProcessor implements Callable<Void> {
         for (ContextBuilder builder : contextBuilders) {
             try {
                 log.info("Retrieving model data for: {}", builder.getContextName());
-                String modelData = RestRequest.getModelData(builder, event);
+                String modelData = RestRequest.getModelData(builder, event, instanceUUID);
                 retrievedModels.put(builder.getContextName(), modelData);
             } catch (ContextAggregatorException e) {
                 DataQuality errorDataQuality = new DataQuality();
