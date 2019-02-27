@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "30ae64b5_3c818552",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2019-02-27T21:30:44Z",
+      "side": 1,
+      "message": "What does this randomUUID do?",
+      "revId": "8c42a93b7de8076315342784eb3a944ff8a9920c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
