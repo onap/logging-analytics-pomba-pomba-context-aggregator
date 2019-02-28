@@ -52,6 +52,24 @@
       "revId": "8c42a93b7de8076315342784eb3a944ff8a9920c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "06040f8b_217c21aa",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 3131
+      },
+      "writtenOn": "2019-02-28T20:20:19Z",
+      "side": 1,
+      "message": "Ah, yes, I see it\u0027s the attribute formerly known as InstanceUUID.\n\nI can fix it here and in the other microservices that are being updated as part of https://jira.onap.org/browse/LOG-551, but this problem permeates all of the other microserives so we should probably have a defect to update them.",
+      "parentUuid": "83a79933_752629bb",
+      "revId": "8c42a93b7de8076315342784eb3a944ff8a9920c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
