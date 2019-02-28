@@ -16,6 +16,24 @@
       "revId": "8c42a93b7de8076315342784eb3a944ff8a9920c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d86a9527_957e0cc1",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 3131
+      },
+      "writtenOn": "2019-02-28T18:39:52Z",
+      "side": 1,
+      "message": "It\u0027s the InstanceUUID required by the Casablanca logging standards\n\n2019-02-28T18:16:45.825Z        pool-1-thread-1 ERROR   org.onap.pomba.contextaggregator.service.ContextAggregatorProcessor     InstanceUUID\u003d90e73e94-bd39-4716-a7d5-ee1e1b1971e4, RequestId\u003dddf9c385-d92d-4597-95b9-b983c2719d8d, ServiceName\u003dcontext-aggregator, ServiceInstanceId\u003dPombaDemoCust_001-ServiceInst-001, StartTime\u003d2019-02-28T18:16:41.017Z, InvocationID\u003d3417e19c-e0a8-4bcf-bec0-1df24d322f34, ClientAddress\u003ddev-pomba-pomba-contextaggregator-7f6df89486-czmt8, PartnerName\u003dRTAIT, StatusCode\u003dERROR",
+      "parentUuid": "30ae64b5_3c818552",
+      "revId": "8c42a93b7de8076315342784eb3a944ff8a9920c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
