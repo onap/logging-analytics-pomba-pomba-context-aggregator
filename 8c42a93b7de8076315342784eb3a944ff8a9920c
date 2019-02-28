@@ -34,6 +34,24 @@
       "revId": "8c42a93b7de8076315342784eb3a944ff8a9920c",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83a79933_752629bb",
+        "filename": "src/main/java/org/onap/pomba/contextaggregator/service/ContextAggregatorProcessor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2019-02-28T18:50:29Z",
+      "side": 1,
+      "message": "Should be \"instanceID\" rather than \"instanceUUID\" according to https://wiki.onap.org/pages/viewpage.action?pageId\u003d28378955 ?",
+      "parentUuid": "d86a9527_957e0cc1",
+      "revId": "8c42a93b7de8076315342784eb3a944ff8a9920c",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
