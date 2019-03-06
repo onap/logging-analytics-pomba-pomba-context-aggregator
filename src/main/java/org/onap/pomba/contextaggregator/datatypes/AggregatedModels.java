@@ -15,18 +15,27 @@
  * limitations under the License.
  * ============LICENSE_END=====================================================
  */
+
 package org.onap.pomba.contextaggregator.datatypes;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.UUID;
+
 import org.onap.pomba.common.datatypes.ModelContext;
 import org.onap.pomba.contextaggregator.config.EventHeaderConfig;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 public class AggregatedModels {
 
@@ -35,53 +44,110 @@ public class AggregatedModels {
     Header entityHeader;
     @Expose
     @SerializedName("entity")
-    POAEntity poaEntity;
-
+    PoaEntity poaEntity;
 
     /**
-     * Creates an event with an entity header and entity containing the models and poa-event from Dmaap
+     * Creates an event with an entity header and entity containing the models and
+     * poa-event from Dmaap.
      *
-     * @param headerConfig
-     * @param jsonContextMap
+     * @param headerConfig The event header config
+     * @param jsonContextMap The context map
+     * @param event The POA Event
      */
     public AggregatedModels(EventHeaderConfig headerConfig, Map<String, String> jsonContextMap, POAEvent event) {
         entityHeader = new Header(headerConfig);
 
         Gson gson = new GsonBuilder().create();
         Map<String, ModelContext> contextMap = new HashMap<>();
+        List<String> errorTexts = new ArrayList<>();
+
         for (Entry<String, String> entry : jsonContextMap.entrySet()) {
             ModelContext context = null;
             if (entry.getValue().isEmpty()) {
                 context = new ModelContext();
             } else {
                 context = gson.fromJson(entry.getValue(), ModelContext.class);
+                JsonParser parser = new JsonParser();
+                JsonElement jsonElement = parser.parse(entry.getValue());
+                errorTexts.addAll(extractErrors(entry.getKey(), jsonElement));
             }
             contextMap.put(entry.getKey(), context);
         }
 
-        poaEntity = new POAEntity(contextMap, event);
+        if (errorTexts.isEmpty()) {
+            event.setDataQualitySummary(DataQualitySummary.ok());
+        } else {
+            // Fill the errors:
+            event.setDataQualitySummary(DataQualitySummary.error(errorTexts));
+        }
+
+        poaEntity = new PoaEntity(contextMap, event);
     }
 
+    /**
+     * Recursive method to find all the dataQuality errors in the JsonElement.
+     * @param errorPath Path to the current element
+     * @param jsonElement The json element
+     * @return list of error strings extracted from the json element and it's children.
+     */
+    private static List<String> extractErrors(String errorPath, JsonElement jsonElement) {
+        List<String> errorTexts = new ArrayList<>();
+        if (jsonElement.isJsonArray()) {
+            JsonArray jsonArray = jsonElement.getAsJsonArray();
+            for (int i = 0; i < jsonArray.size(); i++) {
+                JsonElement indexElement = jsonArray.get(i);
+                errorTexts.addAll(extractErrors(errorPath + "[" + i + "]", indexElement));
+            }
+        } else if (jsonElement.isJsonObject()) {
+            JsonObject jsonObject = jsonElement.getAsJsonObject();
+            extractErrorsFromJsonObject(errorPath, errorTexts, jsonObject);
+        }
+
+        return errorTexts;
+    }
+
+    private static void extractErrorsFromJsonObject(String errorPath, List<String> errorTexts, JsonObject jsonObject) {
+        for (Entry<String, JsonElement> entrySet : jsonObject.entrySet()) {
+            if ("dataQuality".equals(entrySet.getKey())) {
+                JsonElement dqElement = entrySet.getValue();
+
+                JsonObject dqObject = dqElement.getAsJsonObject();
+                JsonElement dqStatusElement = dqObject.get("status");
+                if (dqStatusElement == null) {
+                    continue;
+                }
+                String statusValue = dqStatusElement.getAsString();
+
+                if ("error".equals(statusValue)) {
+                    JsonElement dqErrorTextElement = dqObject.get("errorText");
+                    if (dqErrorTextElement != null) {
+                        String errorTextValue = dqErrorTextElement.getAsString();
+                        errorTexts.add(errorPath + ": " + errorTextValue);                        
+                    }
+                }
+            } else {
+                // recursive call to extract errors from other JsonElements:
+                errorTexts.addAll(extractErrors(errorPath + "/" + entrySet.getKey(), entrySet.getValue()));
+            }
+        }
+    }
 
     /**
-     * Returns this instance as a JSON payload
+     * Returns this instance as a JSON payload.
      *
      * @return
      */
     public String generateJsonPayload() {
         Gson gson = new GsonBuilder().create();
-        String payload = gson.toJson(this);
-        return payload;
+        return gson.toJson(this);
     }
 
     public Header getEntityHeader() {
         return entityHeader;
     }
 
-
-
     /**
-     * Entity header class for JSON serialization
+     * Entity header class for JSON serialization.
      */
     private class Header {
         @Expose
@@ -117,43 +183,9 @@ public class AggregatedModels {
             topicName = config.getTopicName();
             eventId = UUID.randomUUID().toString();
         }
-
-
-        public String getId() {
-            return id;
-        }
-
-        public String getDomain() {
-            return domain;
-        }
-
-        public String getSourceName() {
-            return sourceName;
-        }
-
-        public String getEventType() {
-            return eventType;
-        }
-
-        public String getEntityType() {
-            return entityType;
-        }
-
-        public String getTopEntityType() {
-            return topEntityType;
-        }
-
-        public String getTopicName() {
-            return topicName;
-        }
-
-        public String getEventId() {
-            return eventId;
-        }
     }
 
-
-    private class POAEntity {
+    private class PoaEntity {
         @Expose
         @SerializedName("poa-event")
         POAEvent event;
@@ -161,7 +193,7 @@ public class AggregatedModels {
         @SerializedName("context-list")
         private Map<String, ModelContext> contextMap;
 
-        public POAEntity(Map<String, ModelContext> contextMap, POAEvent event) {
+        public PoaEntity(Map<String, ModelContext> contextMap, POAEvent event) {
             this.contextMap = contextMap;
             this.event = event;
         }

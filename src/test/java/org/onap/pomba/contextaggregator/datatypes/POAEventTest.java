@@ -23,36 +23,31 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.onap.pomba.contextaggregator.exception.ContextAggregatorException;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest
 public class POAEventTest {
 
-    POAEvent pOAEvent = new POAEvent();
+    POAEvent poaEvent = new POAEvent();
 
     @Before
     public void setup() {
-        pOAEvent.setServiceInstanceId("a");
-        pOAEvent.setModelVersionId("b");
-        pOAEvent.setModelInvariantId("c");
-        pOAEvent.setxFromAppId("e");
-        pOAEvent.setxTransactionId("f");
+        poaEvent.setServiceInstanceId("a");
+        poaEvent.setModelVersionId("b");
+        poaEvent.setModelInvariantId("c");
+        poaEvent.setxFromAppId("e");
+        poaEvent.setxTransactionId("f");
     }
 
     @Test
     public void testValidate() throws ContextAggregatorException {
-        pOAEvent.validate();
+        poaEvent.validate();
     }
 
     @Test
     public void testValidateEmptyServiceInstanceId() throws ContextAggregatorException {
-        pOAEvent.setServiceInstanceId("");
+        poaEvent.setServiceInstanceId("");
         try {
-            pOAEvent.validate();
+            poaEvent.validate();
         }
         catch (ContextAggregatorException e) {
             assertTrue(e.getMessage().contains("is missing"));
@@ -61,10 +56,10 @@ public class POAEventTest {
 
     @Test
     public void testValidateEmptyModelVersionId() throws ContextAggregatorException {
-        pOAEvent.setModelVersionId("");
+        poaEvent.setModelVersionId("");
 
         try {
-            pOAEvent.validate();
+            poaEvent.validate();
         }
         catch (ContextAggregatorException e) {
             assertTrue(e.getMessage().contains("is missing"));
@@ -73,10 +68,10 @@ public class POAEventTest {
 
     @Test
     public void testValidateEmptyModelInvariantId() throws ContextAggregatorException {
-        pOAEvent.setModelInvariantId("");
+        poaEvent.setModelInvariantId("");
 
         try {
-            pOAEvent.validate();
+            poaEvent.validate();
         }
         catch (ContextAggregatorException e) {
             assertTrue(e.getMessage().contains("is missing"));
@@ -85,10 +80,10 @@ public class POAEventTest {
 
     @Test
     public void testValidateEmptyxFromAppId() throws ContextAggregatorException {
-        pOAEvent.setxFromAppId("");
+        poaEvent.setxFromAppId("");
 
         try {
-            pOAEvent.validate();
+            poaEvent.validate();
         }
         catch (ContextAggregatorException e) {
             assertTrue(e.getMessage().contains("is missing"));
@@ -97,10 +92,10 @@ public class POAEventTest {
 
     @Test
     public void testValidateEmptyxTransactionId() throws ContextAggregatorException {
-        pOAEvent.setxTransactionId("");
+        poaEvent.setxTransactionId("");
 
         try {
-            pOAEvent.validate();
+            poaEvent.validate();
         }
         catch (ContextAggregatorException e) {
             assertTrue(e.getMessage().contains("is missing"));
@@ -109,7 +104,7 @@ public class POAEventTest {
 
     @Test
     public void testToString() {
-        String result = pOAEvent.toString();
+        String result = poaEvent.toString();
         Assert.assertNotEquals("", result);
     }
 }

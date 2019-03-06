@@ -1,0 +1,1341 @@
+{
+  "service": {
+    "uuid": "PombaDemoCust_001-ServiceInst-001",
+    "name": "PombaDemoCust_001-ServiceInst-001-name",
+    "modelVersionID": "pomba-demo-sdc-model-001-version001",
+    "modelInvariantUUID": "pomba-demo-sdc-model-001",
+    "dataQuality": {
+      "status": "error",
+      "errorText": "error1"
+    },
+    "attributeList": [
+       {
+          "name": "hostName",
+           "dataQuality": {
+                    "status": "error",
+                    "errorText": "error1.1"
+        }
+       }
+    ]
+  },
+  "dataQuality": {
+    "status": "error",
+    "errorText": "error2"
+  },
+  "attributeList": [],
+  "vnfList": [
+    {
+      "uuid": "PombaDemoCust_001-VNF-id-001-2",
+      "name": "Firewall-2",
+      "type": "vFW-vSINK-service/vFWvSINK 0",
+      "modelVersionID": "pomba-demo-sdc-model-001-version001",
+      "modelInvariantUUID": "pomba-demo-sdc-model-001",
+      "dataQuality": {
+        "status": "error",
+        "errorText": "error3"
+      },
+      "attributeList": [],
+      "vfModuleList": [
+        {
+          "uuid": "PombaDemoCust_001-VNF-id-001-VfModule001",
+          "name": "PombaDemoCust_001-VNF-id-001-VfModule001-name",
+          "modelVersionID": "pomba-demo-sdc-model-001-version001",
+          "modelInvariantUUID": "pomba-demo-sdc-model-001",
+          "modelCustomizationUUID": "3b822416-475d-4e1c-aac3-2544b0a0fdfc",
+          "maxInstances": 1,
+          "minInstances": 0,
+          "dataQuality": {
+            "status": "error",
+            "errorText": "error4"
+          },
+          "attributeList": [],
+          "vmList": [
+            {
+              "uuid": "a6a609e3-967a-48bd-8ce5-41c7ff5c19b9-2",
+              "name": "Firewall-001-2",
+              "dataQuality": {
+               "status": "error",
+               "errorText": "error5"
+              },
+              "attributeList": [
+                {
+                  "name": "hostName",
+                  "dataQuality": {
+                    "status": "error",
+                    "errorText": "error6"
+                  }
+                },
+                {
+                  "name": "lockedBoolean",
+                  "value": "true",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "imageId",
+                  "value": "PombaRegion001-image001",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                }
+              ],
+              "pServer": {
+                "dataQuality": {
+                  "status": "ok"
+                },
+                "attributeList": [],
+                "pInterfaceList": []
+              },
+              "lInterfaceList": []
+            }
+          ],
+          "networkList": [
+            {
+              "uuid": "2ea02809-7279-4b5e-931a-62b231615497",
+              "name": "NET_1105",
+              "modelVersionID": "pomba-demo-sdc-model-001-version001",
+              "modelInvariantUUID": "pomba-demo-sdc-model-001",
+              "dataQuality": {
+                    "status": "error",
+                    "errorText": "error7"
+              },
+              "attributeList": [
+                {
+                  "name": "networkType",
+                  "value": "network-type-1",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "networkTechnology",
+                  "value": "network-technology-1",
+                  "dataQuality": {
+                    "status": "error",
+                    "errorText": "error8"
+                  }
+                },
+                {
+                  "name": "sharedNetworkBoolean",
+                  "value": "true",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "networkRole",
+                  "value": "network-role-1",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "resourceVersion",
+                  "value": "1550591130123",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                }
+              ],
+              "networkPolicyList": []
+            },
+            {
+              "uuid": "01e8d84a-17a6-47b5-a167-6a45d1d56603",
+              "name": "NET_1106",
+              "modelVersionID": "pomba-demo-sdc-model-001-version001",
+              "modelInvariantUUID": "pomba-demo-sdc-model-001",
+              "dataQuality": {
+                "status": "ok"
+              },
+              "attributeList": [
+                {
+                  "name": "networkType",
+                  "value": "network-type-1",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "networkTechnology",
+                  "value": "network-technology-1",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "sharedNetworkBoolean",
+                  "value": "true",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "networkRole",
+                  "value": "network-role-1",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "resourceVersion",
+                  "value": "1550591133012",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                }
+              ],
+              "networkPolicyList": []
+            }
+          ]
+        }
+      ],
+      "vnfcList": [],
+      "networkList": [
+        {
+          "uuid": "2ea02809-7279-4b5e-931a-62b231615497",
+          "name": "NET_1105",
+          "modelVersionID": "pomba-demo-sdc-model-001-version001",
+          "modelInvariantUUID": "pomba-demo-sdc-model-001",
+          "dataQuality": {
+            "status": "ok"
+          },
+          "attributeList": [
+            {
+              "name": "networkType",
+              "value": "network-type-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "networkTechnology",
+              "value": "network-technology-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "sharedNetworkBoolean",
+              "value": "true",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "networkRole",
+              "value": "network-role-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "resourceVersion",
+              "value": "1550591130123",
+              "dataQuality": {
+                "status": "ok"
+              }
+            }
+          ],
+          "networkPolicyList": []
+        },
+        {
+          "uuid": "01e8d84a-17a6-47b5-a167-6a45d1d56603",
+          "name": "NET_1106",
+          "modelVersionID": "pomba-demo-sdc-model-001-version001",
+          "modelInvariantUUID": "pomba-demo-sdc-model-001",
+          "dataQuality": {
+            "status": "ok"
+          },
+          "attributeList": [
+            {
+              "name": "networkType",
+              "value": "network-type-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "networkTechnology",
+              "value": "network-technology-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "sharedNetworkBoolean",
+              "value": "true",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "networkRole",
+              "value": "network-role-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "resourceVersion",
+              "value": "1550591133012",
+              "dataQuality": {
+                "status": "ok"
+              }
+            }
+          ],
+          "networkPolicyList": []
+        }
+      ]
+    },
+    {
+      "uuid": "PombaDemoCust_001-VNF-id-001",
+      "name": "Firewall-1",
+      "type": "vFW-vSINK-service/vFWvSINK 0",
+      "modelVersionID": "pomba-demo-sdc-model-001-version001",
+      "modelInvariantUUID": "pomba-demo-sdc-model-001",
+      "dataQuality": {
+        "status": "ok"
+      },
+      "attributeList": [
+        {
+          "name": "nfNamingCode",
+          "value": "nf-naming-code1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "nfType",
+          "value": "nf-type1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "nfRole",
+          "value": "nf-role1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "nfFunction",
+          "value": "nf-function1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        }
+      ],
+      "vfModuleList": [
+        {
+          "uuid": "PombaDemoCust_001-VNF-id-001-VfModule001",
+          "name": "PombaDemoCust_001-VNF-id-001-VfModule001-name",
+          "modelVersionID": "pomba-demo-sdc-model-001-version001",
+          "modelInvariantUUID": "pomba-demo-sdc-model-001",
+          "modelCustomizationUUID": "3b822416-475d-4e1c-aac3-2544b0a0fdfc",
+          "maxInstances": 1,
+          "minInstances": 0,
+          "dataQuality": {
+            "status": "ok"
+          },
+          "attributeList": [],
+          "vmList": [
+            {
+              "uuid": "a6a609e3-967a-48bd-8ce5-41c7ff5c19b9",
+              "name": "Firewall-001",
+              "dataQuality": {
+                "status": "ok"
+              },
+              "attributeList": [
+                {
+                  "name": "hostName",
+                  "value": "PombaDemoCust_001-pserver-id-001",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "lockedBoolean",
+                  "value": "false",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "imageId",
+                  "value": "PombaRegion001-image001",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                }
+              ],
+              "pServer": {
+                "uuid": "PombaDemoCust_001-pserver-id-001",
+                "name": "PombaDemoCust_001-pserver-id-001",
+                "dataQuality": {
+                  "status": "ok"
+                },
+                "attributeList": [
+                  {
+                    "name": "lockedBoolean",
+                    "value": "true",
+                    "dataQuality": {
+                      "status": "ok"
+                    }
+                  },
+                  {
+                    "name": "name2",
+                    "value": "PombaDemoCust_001-pserver-id-001-name2",
+                    "dataQuality": {
+                      "status": "ok"
+                    }
+                  },
+                  {
+                    "name": "equipType",
+                    "value": "equip-type-1",
+                    "dataQuality": {
+                      "status": "ok"
+                    }
+                  },
+                  {
+                    "name": "equipVendor",
+                    "value": "equip-vendor-1",
+                    "dataQuality": {
+                      "status": "ok"
+                    }
+                  },
+                  {
+                    "name": "equipModel",
+                    "value": "equip-model-1",
+                    "dataQuality": {
+                      "status": "ok"
+                    }
+                  },
+                  {
+                    "name": "serialNumber",
+                    "value": "serial-number",
+                    "dataQuality": {
+                      "status": "ok"
+                    }
+                  },
+                  {
+                    "name": "fqdn",
+                    "value": "fqdn-1",
+                    "dataQuality": {
+                      "status": "ok"
+                    }
+                  },
+                  {
+                    "name": "resourceVersion",
+                    "value": "1550591242783",
+                    "dataQuality": {
+                      "status": "ok"
+                    }
+                  },
+                  {
+                    "name": "ptniiName",
+                    "value": "ptnii-equip-name-1",
+                    "dataQuality": {
+                      "status": "ok"
+                    }
+                  },
+                  {
+                    "name": "topology",
+                    "value": "internet-topology-1",
+                    "dataQuality": {
+                      "status": "ok"
+                    }
+                  },
+                  {
+                    "name": "purpose",
+                    "value": "purpose-1",
+                    "dataQuality": {
+                      "status": "ok"
+                    }
+                  }
+                ],
+                "pInterfaceList": [
+                  {
+                    "name": "interface-name-pserver1-1",
+                    "dataQuality": {
+                      "status": "ok"
+                    },
+                    "attributeList": [
+                      {
+                        "name": "lockedBoolean",
+                        "value": "true",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "interfaceRole",
+                        "value": "interface-role-pserver1-1",
+                        "dataQuality": {
+                          "status": "error",
+                          "errorText": "error9"
+                        }
+                      },
+                      {
+                        "name": "interfaceType",
+                        "value": "interface-type-pserver1-1",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "speedValue",
+                        "value": "100",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "speedUnits",
+                        "value": "Mbps",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "portDescription",
+                        "value": "port-description-pserver1-1",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "resourceVersion",
+                        "value": "1550591243386",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "equipmentID",
+                        "value": "equipment-identifier-pnf1-1",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      }
+                    ],
+                    "physicalLinkList": [],
+                    "logicalLinkList": []
+                  },
+                  {
+                    "name": "interface-name-pserver1-2",
+                    "dataQuality": {
+                      "status": "ok"
+                    },
+                    "attributeList": [
+                      {
+                        "name": "lockedBoolean",
+                        "value": "true",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "interfaceRole",
+                        "value": "interface-role-pserver1-2",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "interfaceType",
+                        "value": "interface-type-pserver1-2",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "speedValue",
+                        "value": "1000",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "speedUnits",
+                        "value": "Mbps",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "portDescription",
+                        "value": "port-description-pserver1-2",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "resourceVersion",
+                        "value": "1550591243407",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      },
+                      {
+                        "name": "equipmentID",
+                        "value": "equipment-identifier-pserver1-2",
+                        "dataQuality": {
+                          "status": "ok"
+                        }
+                      }
+                    ],
+                    "physicalLinkList": [],
+                    "logicalLinkList": []
+                  }
+                ]
+              },
+              "lInterfaceList": []
+            }
+          ],
+          "networkList": [
+            {
+              "uuid": "2ea02809-7279-4b5e-931a-62b231615497",
+              "name": "NET_1105",
+              "modelVersionID": "pomba-demo-sdc-model-001-version001",
+              "modelInvariantUUID": "pomba-demo-sdc-model-001",
+              "dataQuality": {
+                "status": "ok"
+              },
+              "attributeList": [
+                {
+                  "name": "networkType",
+                  "value": "network-type-1",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "networkTechnology",
+                  "value": "network-technology-1",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "sharedNetworkBoolean",
+                  "value": "true",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "networkRole",
+                  "value": "network-role-1",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "resourceVersion",
+                  "value": "1550591130123",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                }
+              ],
+              "networkPolicyList": []
+            },
+            {
+              "uuid": "01e8d84a-17a6-47b5-a167-6a45d1d56603",
+              "name": "NET_1106",
+              "modelVersionID": "pomba-demo-sdc-model-001-version001",
+              "modelInvariantUUID": "pomba-demo-sdc-model-001",
+              "dataQuality": {
+                "status": "ok"
+              },
+              "attributeList": [
+                {
+                  "name": "networkType",
+                  "value": "network-type-1",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "networkTechnology",
+                  "value": "network-technology-1",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "sharedNetworkBoolean",
+                  "value": "true",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "networkRole",
+                  "value": "network-role-1",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                },
+                {
+                  "name": "resourceVersion",
+                  "value": "1550591133012",
+                  "dataQuality": {
+                    "status": "ok"
+                  }
+                }
+              ],
+              "networkPolicyList": []
+            }
+          ]
+        }
+      ],
+      "vnfcList": [],
+      "networkList": [
+        {
+          "uuid": "2ea02809-7279-4b5e-931a-62b231615497",
+          "name": "NET_1105",
+          "modelVersionID": "pomba-demo-sdc-model-001-version001",
+          "modelInvariantUUID": "pomba-demo-sdc-model-001",
+          "dataQuality": {
+            "status": "ok"
+          },
+          "attributeList": [
+            {
+              "name": "networkType",
+              "value": "network-type-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "networkTechnology",
+              "value": "network-technology-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "sharedNetworkBoolean",
+              "value": "true",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "networkRole",
+              "value": "network-role-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "resourceVersion",
+              "value": "1550591130123",
+              "dataQuality": {
+                "status": "ok"
+              }
+            }
+          ],
+          "networkPolicyList": []
+        },
+        {
+          "uuid": "01e8d84a-17a6-47b5-a167-6a45d1d56603",
+          "name": "NET_1106",
+          "modelVersionID": "pomba-demo-sdc-model-001-version001",
+          "modelInvariantUUID": "pomba-demo-sdc-model-001",
+          "dataQuality": {
+            "status": "ok"
+          },
+          "attributeList": [
+            {
+              "name": "networkType",
+              "value": "network-type-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "networkTechnology",
+              "value": "network-technology-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "sharedNetworkBoolean",
+              "value": "true",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "networkRole",
+              "value": "network-role-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "resourceVersion",
+              "value": "1550591133012",
+              "dataQuality": {
+                "status": "ok"
+              }
+            }
+          ],
+          "networkPolicyList": []
+        }
+      ]
+    }
+  ],
+  "pnfList": [
+    {
+      "uuid": "PombaDemoCust_001-PNF2-id-001-id",
+      "name": "PombaDemoCust_001-PNF2-id-001",
+      "modelVersionID": "pomba-demo-sdc-model-001-version001",
+      "modelInvariantUUID": "pomba-demo-sdc-model-001",
+      "dataQuality": {
+        "status": "error",
+        "errorText": "error10"
+      },
+      "attributeList": [
+        {
+          "name": "nfRole",
+          "value": "nf-role-2",
+          "dataQuality": {
+            "status": "error"
+          }
+        },
+        {
+          "name": "name2",
+          "value": "PombaDemoCust_001-PNF2-id-001-name2",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "equipType",
+          "value": "equip-type-2",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "equipVendor",
+          "value": "equip-vendor-2",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "equipModel",
+          "value": "equip-model-2",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "swVersion",
+          "value": "sw-version-2",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "serialNumber",
+          "value": "serial-number-2",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "resourceVersion",
+          "value": "1550591234748",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "name2Source",
+          "value": "pnf2-name2-source-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "managementOptions",
+          "value": "management-option-2",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "frameId",
+          "value": "frame-id-02",
+          "dataQuality": {
+            "status": "ok"
+          }
+        }
+      ],
+      "pInterfaceList": [
+        {
+          "uuid": "equipment-identifier-pnf2-1",
+          "name": "interface-name-pnf2-1",
+          "dataQuality": {
+            "status": "ok"
+          },
+          "attributeList": [
+            {
+              "name": "lockedBoolean",
+              "value": "true",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "interfaceRole",
+              "value": "interface-role-pnf2-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "interfaceType",
+              "value": "interface-type-pnf2-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "speedValue",
+              "value": "100",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "speedUnits",
+              "value": "Mbps",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "portDescription",
+              "value": "port-description-pnf2-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "resourceVersion",
+              "value": "1550591235395",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "equipmentID",
+              "value": "equipment-identifier-pnf2-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            }
+          ],
+          "physicalLinkList": [],
+          "logicalLinkList": []
+        },
+        {
+          "uuid": "equipment-identifier-pnf2-2",
+          "name": "interface-name-pnf2-2",
+          "dataQuality": {
+            "status": "ok"
+          },
+          "attributeList": [
+            {
+              "name": "lockedBoolean",
+              "value": "true",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "interfaceRole",
+              "value": "interface-role-pnf2-2",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "interfaceType",
+              "value": "interface-type-pnf2-2",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "speedValue",
+              "value": "1000",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "speedUnits",
+              "value": "Mbps",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "portDescription",
+              "value": "port-description-pnf2-2",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "resourceVersion",
+              "value": "1550591235633",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "equipmentID",
+              "value": "equipment-identifier-pnf2-2",
+              "dataQuality": {
+                "status": "ok"
+              }
+            }
+          ],
+          "physicalLinkList": [],
+          "logicalLinkList": []
+        }
+      ]
+    },
+    {
+      "uuid": "PombaDemoCust_001-PNF-id-001-id",
+      "name": "PombaDemoCust_001-PNF-id-001",
+      "modelVersionID": "pomba-demo-sdc-model-001-version001",
+      "modelInvariantUUID": "pomba-demo-sdc-model-001",
+      "dataQuality": {
+        "status": "ok"
+      },
+      "attributeList": [
+        {
+          "name": "nfRole",
+          "value": "nf-role-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "name2",
+          "value": "PombaDemoCust_001-PNF-id-001-name2",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "equipType",
+          "value": "equip-type-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "equipVendor",
+          "value": "equip-vendor-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "equipModel",
+          "value": "equip-model-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "swVersion",
+          "value": "sw-version-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "serialNumber",
+          "value": "serial-number-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "resourceVersion",
+          "value": "1550591220149",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "name2Source",
+          "value": "pnf-name2-source-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "managementOptions",
+          "value": "management-option-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "frameId",
+          "value": "frame-id-01",
+          "dataQuality": {
+            "status": "ok"
+          }
+        }
+      ],
+      "pInterfaceList": [
+        {
+          "uuid": "equipment-identifier-pnf1-1",
+          "name": "interface-name-pnf1-1",
+          "dataQuality": {
+            "status": "ok"
+          },
+          "attributeList": [
+            {
+              "name": "lockedBoolean",
+              "value": "true",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "interfaceRole",
+              "value": "interface-role-pnf1-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "interfaceType",
+              "value": "interface-type-pnf1-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "speedValue",
+              "value": "100",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "speedUnits",
+              "value": "Mbps",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "portDescription",
+              "value": "port-description-pnf1-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "resourceVersion",
+              "value": "1550591221599",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "equipmentID",
+              "value": "equipment-identifier-pnf1-1",
+              "dataQuality": {
+                "status": "ok"
+              }
+            }
+          ],
+          "physicalLinkList": [],
+          "logicalLinkList": []
+        },
+        {
+          "uuid": "equipment-identifier-pnf1-2",
+          "name": "interface-name-pnf1-2",
+          "dataQuality": {
+            "status": "ok"
+          },
+          "attributeList": [
+            {
+              "name": "lockedBoolean",
+              "value": "true",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "interfaceRole",
+              "value": "interface-role-pnf1-2",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "interfaceType",
+              "value": "interface-type-pnf1-2",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "speedValue",
+              "value": "1000",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "speedUnits",
+              "value": "Mbps",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "portDescription",
+              "value": "port-description-pnf1-2",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "resourceVersion",
+              "value": "1550591222076",
+              "dataQuality": {
+                "status": "ok"
+              }
+            },
+            {
+              "name": "equipmentID",
+              "value": "equipment-identifier-pnf1-2",
+              "dataQuality": {
+                "status": "ok"
+              }
+            }
+          ],
+          "physicalLinkList": [],
+          "logicalLinkList": []
+        }
+      ]
+    }
+  ],
+  "networkList": [
+    {
+      "uuid": "2ea02809-7279-4b5e-931a-62b231615497",
+      "name": "NET_1105",
+      "modelVersionID": "pomba-demo-sdc-model-001-version001",
+      "modelInvariantUUID": "pomba-demo-sdc-model-001",
+      "dataQuality": {
+        "status": "ok"
+      },
+      "attributeList": [
+        {
+          "name": "networkType",
+          "value": "network-type-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "networkTechnology",
+          "value": "network-technology-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "sharedNetworkBoolean",
+          "value": "true",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "networkRole",
+          "value": "network-role-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "resourceVersion",
+          "value": "1550591130123",
+          "dataQuality": {
+            "status": "ok"
+          }
+        }
+      ],
+      "networkPolicyList": []
+    },
+    {
+      "uuid": "01e8d84a-17a6-47b5-a167-6a45d1d56603",
+      "name": "NET_1106",
+      "modelVersionID": "pomba-demo-sdc-model-001-version001",
+      "modelInvariantUUID": "pomba-demo-sdc-model-001",
+      "dataQuality": {
+        "status": "ok"
+      },
+      "attributeList": [
+        {
+          "name": "networkType",
+          "value": "network-type-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "networkTechnology",
+          "value": "network-technology-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "sharedNetworkBoolean",
+          "value": "true",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "networkRole",
+          "value": "network-role-1",
+          "dataQuality": {
+            "status": "ok"
+          }
+        },
+        {
+          "name": "resourceVersion",
+          "value": "1550591133012",
+          "dataQuality": {
+            "status": "ok"
+          }
+        }
+      ],
+      "networkPolicyList": []
+    }
+  ]
+}

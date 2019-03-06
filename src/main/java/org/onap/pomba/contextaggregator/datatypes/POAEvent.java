@@ -27,8 +27,7 @@ public class POAEvent {
     private String modelInvariantId;
     private String xFromAppId;
     private String xTransactionId;
-
-    public POAEvent() {}
+    private DataQualitySummary dataQualitySummary;
 
     public String getServiceInstanceId() {
         return serviceInstanceId;
@@ -70,6 +69,14 @@ public class POAEvent {
         this.xTransactionId = xTransactionId;
     }
 
+    public DataQualitySummary getDataQualitySummary() {
+        return dataQualitySummary;
+    }
+
+    public void setDataQualitySummary(DataQualitySummary dataQualitySummary) {
+        this.dataQualitySummary = dataQualitySummary;
+    }
+
     public boolean validate() throws ContextAggregatorException {
         final String missing = " is missing";
 
@@ -108,6 +115,7 @@ public class POAEvent {
     @Override
     public String toString() {
         return "POAEvent [serviceInstanceId=" + serviceInstanceId + ", modelVersionId=" + modelVersionId
-                + ", modelInvariantId=" + modelInvariantId + ", xFromAppId=" + xFromAppId + ", xTransactionId=" + xTransactionId + "]";
+                + ", modelInvariantId=" + modelInvariantId + ", xFromAppId=" + xFromAppId + ", xTransactionId=" + xTransactionId 
+                + ", dataQualitySummary=" + dataQualitySummary + "]";
     }
 }
