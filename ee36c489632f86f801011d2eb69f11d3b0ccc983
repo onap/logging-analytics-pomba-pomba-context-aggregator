@@ -1,0 +1,8 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Norm Traxler <normant@amdocs.com>
+Code-Review+2: Geora Barsky <georab@amdocs.com>
+Submitted-by: Geora Barsky <georab@amdocs.com>
+Submitted-at: Fri, 15 Mar 2019 14:51:51 +0000
+Reviewed-on: https://gerrit.onap.org/r/82286
+Project: logging-analytics/pomba/pomba-context-aggregator
+Branch: refs/heads/master
