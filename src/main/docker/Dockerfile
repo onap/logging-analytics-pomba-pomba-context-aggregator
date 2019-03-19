@@ -15,6 +15,5 @@ ADD startService.sh $MICROSERVICE_HOME/bin/
 RUN chmod 755 $MICROSERVICE_HOME/config/*
 RUN chmod 755 $MICROSERVICE_HOME/lib/*
 RUN chmod 755 $MICROSERVICE_HOME/bin/*
-# RUN apk --no-cache add curl
 
 CMD ["/opt/app/bin/startService.sh"]
