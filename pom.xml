@@ -5,7 +5,7 @@
 
   <groupId>org.onap.logging-analytics.pomba</groupId>
   <artifactId>pomba-context-aggregator</artifactId>
-  <version>1.5.0-SNAPSHOT</version>
+  <version>1.5.1-SNAPSHOT</version>
 
   <parent>
     <groupId>org.onap.oparent</groupId>
@@ -49,6 +49,10 @@
           <groupId>commons-codec</groupId>
           <artifactId>commons-codec</artifactId>
         </exclusion>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -83,7 +87,7 @@
     <dependency>
       <groupId>org.onap.logging-analytics.pomba</groupId>
       <artifactId>pomba-audit-common</artifactId>
-      <version>1.5.0</version>
+      <version>1.5.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
