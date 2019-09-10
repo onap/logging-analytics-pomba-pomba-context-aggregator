@@ -98,7 +98,7 @@
     <dependency>
       <groupId>org.onap.logging-analytics.pomba</groupId>
       <artifactId>pomba-audit-common</artifactId>
-      <version>1.5.1-SNAPSHOT</version>
+      <version>1.5.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
